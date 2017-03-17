@@ -19,8 +19,8 @@
  3. O LED 2 terá um duty cicle proporcional ao valor do sensor analógico (LDR ou temperatura)
  4. O LED 3 informa ON/OFF
  5. O motor deve seguir a seguinte curva de secagem:
-   a. De 0 a 30 segundos: função linear crescente que vai de 0% a 30%
-   b. De 30 a 60 segundos: função constante em 30%
-   c. De 60 a 90 segundos: função linear crescente que vai de 30% a 75%
-   d. De 90 a 120 segundos: função constante em 75%
-   e. De 120 a 180 segundos: função linear decrescente que vai de 75% a 0%
+    1. De 0 a 30 segundos: função linear crescente que vai de 0% a 30%
+    2. De 30 a 60 segundos: função constante em 30%
+    3. De 60 a 90 segundos: função linear crescente que vai de 30% a 75%
+    4. De 90 a 120 segundos: função constante em 75%
+    5. De 120 a 180 segundos: função linear decrescente que vai de 75% a 0%
