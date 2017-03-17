@@ -24,3 +24,5 @@
     3. De 60 a 90 segundos: função linear crescente que vai de 30% a 75%
     4. De 90 a 120 segundos: função constante em 75%
     5. De 120 a 180 segundos: função linear decrescente que vai de 75% a 0%
+
+![alt text](https://image.ibb.co/cq8ETv/Capturar.png "Curva")
