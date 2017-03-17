@@ -4,7 +4,7 @@
  1. Alexandre José Justino de França
  2. Íkaro Breno
  3. João Fernandes
- 4. Glauco
+ 4. Glauco Dantas
  
 ### Objetivo:
 #### Controlar um sistema de resfriamento, que possui os seguintes componentes:
