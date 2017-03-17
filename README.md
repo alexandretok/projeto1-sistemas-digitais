@@ -1,7 +1,7 @@
 ## Projeto de Sistemas Digitais - UFRN / DCA - 2017.1
 
 ### Componentes:
- 1. Alexandre José Justino de França
+ 1. Alexandre Justino
  2. Íkaro Breno
  3. João Fernandes
  4. Glauco Dantas
