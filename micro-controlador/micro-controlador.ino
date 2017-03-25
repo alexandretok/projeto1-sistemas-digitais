@@ -25,6 +25,13 @@
  *   e. De 120 a 180 segundos: função linear decrescente que vai de 75% a 0%
  */
 
+ /*
+  * Pinagem:
+  * Saída PWM 0A (do motor): PORTD6 (Pino 6 no Arduino)
+  * Saída PWM 0B (do sensor): PORTD5 (Pino 5 no Arduino)
+  * Entrada I/O do botão power: PORTD2 (Pino 2 no Arduino)
+  */
+
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
@@ -41,7 +48,8 @@ int main(void){
   ADMUX = 0b01000000; // Configurar o Vcc como referencia e a porta A0 como ADC
   ADCSRA = 0b10000100; // Ativa o ADC e configura o divisor do clock (16)
 
-  DDRD = 1 << PORTD6; // Configura a porta de D6 como saida
+  DDRD = 1 << PORTD6 | 1 << PORTD5; // Configura portas I/O de saída e entrada
+  PORTD = 1 << PORTD2; // Ativa o pull up do pino PORTD2 (Pino 2 no Arduino)
 
   // Clear OC0A on Compare Match, set OC0A at BOTTOM, (non-inverting mode)
   TCCR0A  = (1 << COM0A1);
@@ -62,8 +70,7 @@ int main(void){
   TCCR0B = (1 << CS00) | (1 << CS02);
 
   Serial.begin(9600);
-
-  sistemaAtivado = true;
+  Serial.println("standBy:true");
 
   while(1){
     if(sistemaAtivado){
@@ -101,6 +108,12 @@ int main(void){
       ADCSRA |= 0b01000000; // Inicia a leitura
       while(!(ADCSRA & 0b00010000)); // Aguarda termino da leitura
       // Falta definir como o ADC vai afetar o dutyCycle
+    } else {
+      // Fica verificando se o botão power foi pressionado
+      if(~PIND & (1 << PORTD2)){
+        sistemaAtivado = true;
+        Serial.println("systemActivated:true");
+      }
     }
   }
 }
