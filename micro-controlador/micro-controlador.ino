@@ -54,6 +54,7 @@ int main(void){
   UCSR0B = (1<<RXEN0)|(1<<TXEN0);
 
   /* Set frame format: 8data, 2stop bit */
+  UCSR0C |= _BV(UCSZ01)|_BV(UCSZ00);
   UCSR0C = (1<<USBS0)|(3<<UCSZ00);  
 
   ADMUX = 0b01000000; // Configurar o Vcc como referencia e a porta A0 como ADC
@@ -80,7 +81,6 @@ int main(void){
   // Configura 1024 prescaler e também inicia o contador
   TCCR0B = (1 << CS00) | (1 << CS02);
 
-  
   enviarComando("standBy");
 
   while(1){
@@ -108,24 +108,39 @@ int main(void){
         /* 
          * ATENÇÃO ---->  (não podemos usar essas funções do Arduino!!!) 
          */
-         
-//        enviarComando("tempo:" + float(segundosPassados) / 60.0);
-//        enviarComando(";dutyCycle:");
-//        enviarComando(int(dutyCycle));
-//        enviarComando(";");
-//        enviarDados = false;
+        String comando = "tempo:";
+        comando.concat(float(segundosPassados) / 60.0);
+        enviarComando(comando.c_str());
+
+        comando = "dutyCycle:";
+        comando.concat(int(dutyCycle));
+        enviarComando(comando.c_str());
+
+        enviarComando("\n");
+        enviarDados = false;
       }
 
       // Verifica se acabou o ciclo de resfriamento, se sim desligar o sistema e reiniciar as variaveis
-      if(float(segundosPassados) / 60.0 >= 3.00){
-//        Serial.println("systemActivated:false;");
-//        Serial.println("standBy:true;");
+      if(segundosPassados >= 180){
+        enviarComando("secagemFinalizada");
+        enviarComando("standBy");
         sistemaAtivado = false;
         segundosPassados = 0;
         quantidadeInterrupts = 0;
         dutyCycle = 0;
       }
-    } else {      
+    } else {
+      if((UCSR0A & (1<<RXC0))){
+        enviarComando("tem coisa\n");
+        char k[32];
+        int i = 0;
+        do{
+          k[i] = lerByte();
+          i++;
+        }while(k[i-1] != 0);
+        enviarComando(k);
+      }
+        
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
         sistemaAtivado = true;
@@ -172,5 +187,13 @@ void enviarComando(const char *comando){
     }
     while(!(UCSR0A & (1<<UDRE0)));
     UDR0 = 59; // Envia um ponto e virgula
+}
+
+char lerByte(){
+  //Bit RXC sinaliza quando existem bytes não lidos no buffer
+  if(UCSR0A & (1<<RXC0))
+    return UDR0;
+  else
+    return 0;
 }
 

@@ -8,10 +8,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         qDebug() << "Name  :" << info.portName();
         ui->comboBox->addItem(info.portName());
     }
+
+    timer = new QTimer(this);
+
+    connect(timer, SIGNAL(timeout()), this, SLOT(receberComando()));
 }
 
 MainWindow::~MainWindow(){
     delete ui;
+}
+
+void MainWindow::receberComando(){
+    if(serial.waitForReadyRead(200)){
+        QString response = serial.readAll();
+        qDebug()<<"Response: " << response;
+    }
 }
 
 void MainWindow::on_pushButton_clicked(){
@@ -60,11 +71,15 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
 
         ui->comboBox->setEnabled(false);
 
+        serial.clear();
+
         if(serial.waitForReadyRead(2000)){
             QString response = serial.readAll();
             qDebug()<<"Response: " << response;
 
             if(response.indexOf("standBy;") > -1){
+                timer->setInterval(500);
+                timer->start();
                 ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                 ui->labelStatus->setText("Conectado");
                 ui->pushButton->setEnabled(true);
@@ -77,7 +92,7 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
 
         ui->comboBox->setEnabled(true);
 
-        serial.close();
+//        serial.close();
     }else{
         ui->labelStatusIcone->setPixmap(QPixmap(":/img/desconectado.png"));
         ui->labelStatus->setText("Desconectado");
