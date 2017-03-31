@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/img">
-        <file>off.png</file>
-        <file>on.png</file>
+        <file>ventilador.png</file>
+        <file>conectado.png</file>
+        <file>desconectado.png</file>
     </qresource>
 </RCC>

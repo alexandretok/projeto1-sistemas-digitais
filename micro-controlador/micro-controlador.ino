@@ -47,6 +47,14 @@ bool sistemaAtivado = false;
 float alfa = 1.0;
 
 int main(void){
+  
+  UBRR0 = (int) ((F_CPU / (16 * 9600UL)) - 1); // Configura USART com baud rate de 9600
+
+  /*Enable receiver and transmitter */
+  UCSR0B = (1<<RXEN0)|(1<<TXEN0);
+
+  /* Set frame format: 8data, 2stop bit */
+  UCSR0C = (1<<USBS0)|(3<<UCSZ00);  
 
   ADMUX = 0b01000000; // Configurar o Vcc como referencia e a porta A0 como ADC
   ADCSRA = 0b10000100; // Ativa o ADC e configura o divisor do clock (16)
@@ -72,8 +80,8 @@ int main(void){
   // Configura 1024 prescaler e também inicia o contador
   TCCR0B = (1 << CS00) | (1 << CS02);
 
-  Serial.begin(9600);
-  Serial.println("standBy:true;");
+  
+  enviarComando("standBy");
 
   while(1){
     if(sistemaAtivado){
@@ -101,28 +109,27 @@ int main(void){
          * ATENÇÃO ---->  (não podemos usar essas funções do Arduino!!!) 
          */
          
-        Serial.print("tempo:");
-        Serial.print(float(segundosPassados) / 60.0);
-        Serial.print(";dutyCycle:");
-        Serial.print(int(dutyCycle));
-        Serial.println(";");
-        enviarDados = false;
+//        enviarComando("tempo:" + float(segundosPassados) / 60.0);
+//        enviarComando(";dutyCycle:");
+//        enviarComando(int(dutyCycle));
+//        enviarComando(";");
+//        enviarDados = false;
       }
 
       // Verifica se acabou o ciclo de resfriamento, se sim desligar o sistema e reiniciar as variaveis
       if(float(segundosPassados) / 60.0 >= 3.00){
-        Serial.println("systemActivated:false;");
-        Serial.println("standBy:true;");
+//        Serial.println("systemActivated:false;");
+//        Serial.println("standBy:true;");
         sistemaAtivado = false;
         segundosPassados = 0;
         quantidadeInterrupts = 0;
         dutyCycle = 0;
       }
-    } else {
+    } else {      
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
         sistemaAtivado = true;
-        Serial.println("systemActivated:true;");
+//        Serial.println("systemActivated:true;");
       }
     }
   }
@@ -156,5 +163,14 @@ char curvaDeResfriamento(double tempo){
   else if(tempo <= 3.0)
     return -75 * (tempo - 3);
   else return 0;
+}
+
+void enviarComando(const char *comando){
+    while (*comando){
+      while(!(UCSR0A & (1<<UDRE0)));
+      UDR0 = *comando++;
+    }
+    while(!(UCSR0A & (1<<UDRE0)));
+    UDR0 = 59; // Envia um ponto e virgula
 }
 
