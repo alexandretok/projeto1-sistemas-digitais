@@ -54,8 +54,8 @@ int main(void){
   UCSR0B = (1<<RXEN0)|(1<<TXEN0);
 
   /* Set frame format: 8data, 2stop bit */
-  UCSR0C |= _BV(UCSZ01)|_BV(UCSZ00);
-  UCSR0C = (1<<USBS0)|(3<<UCSZ00);  
+  UCSR0C = _BV(UCSZ01)|_BV(UCSZ00);
+  UCSR0C |= (1<<USBS0)|(3<<UCSZ00);
 
   ADMUX = 0b01000000; // Configurar o Vcc como referencia e a porta A0 como ADC
   ADCSRA = 0b10000100; // Ativa o ADC e configura o divisor do clock (16)
