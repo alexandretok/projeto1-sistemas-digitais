@@ -44,7 +44,9 @@
 
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
-const char interruptsPorSegundo = 61; // (16MHz / prescaler * 256) (Fast PWM Mode) 
+const char interruptsPorSegundo = 61; // (16MHz / prescaler * 256) (Fast PWM Mode)
+
+char recebido[USART_BUFFER_SIZE], bufferIndex = 0;
 unsigned char segundosPassados = 0;
 
 bool enviarDados = true;
@@ -58,7 +60,7 @@ int main(void){
   UBRR0L = BRC; // Configura USART com baud rate de 9600
 
   /*Enable receiver and transmitter */
-  UCSR0B = (1 << RXEN0) | (1 << TXEN0);
+  UCSR0B = (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0);
 
   /* Set frame format: 8data, 1 stop bit, no parity mode */
   UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
@@ -136,11 +138,7 @@ int main(void){
         dutyCycle = 0;
       }
     } else {
-      char * rec;
-      rec = (char *) malloc(USART_BUFFER_SIZE);
-      rec = receberComando();
-      if(rec[0] != '\0')
-        enviarComando(rec);
+     
         
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
@@ -186,15 +184,27 @@ void enviarComando(const char *comando){
     while(!(UCSR0A & (1<<UDRE0)));
     UDR0 = *comando++;
   }
+
+  while(!(UCSR0A & (1<<UDRE0)));
+    UDR0 = '\n';
 }
 
-char * receberComando(){
-  char comandoRecebido[USART_BUFFER_SIZE], i = 0;
-  for(int x=0; x < USART_BUFFER_SIZE; x++)
-    comandoRecebido[x] = '\0';
-  while(UCSR0A & (1<<RXC0) && i < USART_BUFFER_SIZE)
-    comandoRecebido[i++] = UDR0;
+void comandoRecebido(char * comando){
+  if(strcmp(comando, "teste;") == 0)
+    enviarComando("recebi teste");
+}
 
-  return comandoRecebido;
+ISR(USART_RX_vect){
+  
+  if(bufferIndex >= USART_BUFFER_SIZE)
+    bufferIndex = 0;
+  recebido[bufferIndex++] = UDR0;
+
+  if(recebido[bufferIndex-1] == ';'){
+    comandoRecebido(recebido);
+    bufferIndex = 0;
+    for(char i=0; i < USART_BUFFER_SIZE; i++)
+      recebido[i] = '\0';
+  }
 }
 
