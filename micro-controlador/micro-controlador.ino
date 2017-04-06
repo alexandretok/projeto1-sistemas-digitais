@@ -36,6 +36,12 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
+#define F_CPU 16000000
+#define BAUD 9600
+#define BRC ((F_CPU/16/BAUD) - 1)
+
+#define USART_BUFFER_SIZE 16
+
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
 const char interruptsPorSegundo = 61; // (16MHz / prescaler * 256) (Fast PWM Mode) 
@@ -47,15 +53,15 @@ bool sistemaAtivado = false;
 float alfa = 1.0;
 
 int main(void){
-  
-  UBRR0 = (int) ((F_CPU / (16 * 9600UL)) - 1); // Configura USART com baud rate de 9600
+
+  UBRR0H = (BRC >> 8);
+  UBRR0L = BRC; // Configura USART com baud rate de 9600
 
   /*Enable receiver and transmitter */
-  UCSR0B = (1<<RXEN0)|(1<<TXEN0);
+  UCSR0B = (1 << RXEN0) | (1 << TXEN0);
 
-  /* Set frame format: 8data, 2stop bit */
-  UCSR0C = _BV(UCSZ01)|_BV(UCSZ00);
-  UCSR0C |= (1<<USBS0)|(3<<UCSZ00);
+  /* Set frame format: 8data, 1 stop bit, no parity mode */
+  UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
 
   ADMUX = 0b01000000; // Configurar o Vcc como referencia e a porta A0 como ADC
   ADCSRA = 0b10000100; // Ativa o ADC e configura o divisor do clock (16)
@@ -130,16 +136,11 @@ int main(void){
         dutyCycle = 0;
       }
     } else {
-      if((UCSR0A & (1<<RXC0))){
-        enviarComando("tem coisa\n");
-        char k[32];
-        int i = 0;
-        do{
-          k[i] = lerByte();
-          i++;
-        }while(k[i-1] != 0);
-        enviarComando(k);
-      }
+      char * rec;
+      rec = (char *) malloc(USART_BUFFER_SIZE);
+      rec = receberComando();
+      if(rec[0] != '\0')
+        enviarComando(rec);
         
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
@@ -181,19 +182,19 @@ char curvaDeResfriamento(double tempo){
 }
 
 void enviarComando(const char *comando){
-    while (*comando){
-      while(!(UCSR0A & (1<<UDRE0)));
-      UDR0 = *comando++;
-    }
+  while (*comando != '\0'){
     while(!(UCSR0A & (1<<UDRE0)));
-    UDR0 = 59; // Envia um ponto e virgula
+    UDR0 = *comando++;
+  }
 }
 
-char lerByte(){
-  //Bit RXC sinaliza quando existem bytes não lidos no buffer
-  if(UCSR0A & (1<<RXC0))
-    return UDR0;
-  else
-    return 0;
+char * receberComando(){
+  char comandoRecebido[USART_BUFFER_SIZE], i = 0;
+  for(int x=0; x < USART_BUFFER_SIZE; x++)
+    comandoRecebido[x] = '\0';
+  while(UCSR0A & (1<<RXC0) && i < USART_BUFFER_SIZE)
+    comandoRecebido[i++] = UDR0;
+
+  return comandoRecebido;
 }
 
