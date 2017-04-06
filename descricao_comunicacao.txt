@@ -1,0 +1,4 @@
+Quando o programa se conectar ao uC, deve receber a mensagem "pronto\n".
+Para iniciar a secagem, o programa envia o comando "iniciar\n".
+Durante a secagem, o uC vai ficar enviando os dados para o programa no formato: "tempo:30&ventilador:25&sensor:550\n".
+Ao finalizar a curva de secagem, o uC envia "finalizado".

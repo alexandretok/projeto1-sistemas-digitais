@@ -3,5 +3,9 @@
         <file>ventilador.png</file>
         <file>conectado.png</file>
         <file>desconectado.png</file>
+        <file>arroz.png</file>
+        <file>cafe.png</file>
+        <file>milho.png</file>
+        <file>grafico_arroz.jpg</file>
     </qresource>
 </RCC>

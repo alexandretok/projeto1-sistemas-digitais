@@ -44,7 +44,7 @@
 
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
-const char interruptsPorSegundo = 61; // (16MHz / prescaler * 256) (Fast PWM Mode)
+const char interruptsPorSegundo = 16; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
 
 char recebido[USART_BUFFER_SIZE], bufferIndex = 0;
 unsigned char segundosPassados = 0;
@@ -89,7 +89,7 @@ int main(void){
   // Configura 1024 prescaler e também inicia o contador
   TCCR0B = (1 << CS00) | (1 << CS02);
 
-  enviarComando("standBy");
+  enviarComando("pronto");
 
   while(1){
     if(sistemaAtivado){
@@ -112,26 +112,18 @@ int main(void){
   
       // Envia os dados uma vez por segundo
       if(enviarDados == true){
-        
-        /* 
-         * ATENÇÃO ---->  (não podemos usar essas funções do Arduino!!!) 
-         */
         String comando = "tempo:";
         comando.concat(float(segundosPassados) / 60.0);
-        enviarComando(comando.c_str());
 
-        comando = "dutyCycle:";
+        comando.concat("&ventilador:");
         comando.concat(int(dutyCycle));
         enviarComando(comando.c_str());
-
-        enviarComando("\n");
         enviarDados = false;
       }
 
       // Verifica se acabou o ciclo de resfriamento, se sim desligar o sistema e reiniciar as variaveis
       if(segundosPassados >= 180){
-        enviarComando("secagemFinalizada");
-        enviarComando("standBy");
+        enviarComando("finalizada");
         sistemaAtivado = false;
         segundosPassados = 0;
         quantidadeInterrupts = 0;
@@ -143,7 +135,7 @@ int main(void){
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
         sistemaAtivado = true;
-//        Serial.println("systemActivated:true;");
+        enviarComando("iniciando");
       }
     }
   }
@@ -190,8 +182,11 @@ void enviarComando(const char *comando){
 }
 
 void comandoRecebido(char * comando){
-  if(strcmp(comando, "teste;") == 0)
-    enviarComando("recebi teste");
+  if(strcmp(comando, "iniciar\n") == 0){
+    enviarComando("iniciando\0");
+    sistemaAtivado = true;
+  } else
+    enviarComando("recebi comando inválido");
 }
 
 ISR(USART_RX_vect){
@@ -200,7 +195,7 @@ ISR(USART_RX_vect){
     bufferIndex = 0;
   recebido[bufferIndex++] = UDR0;
 
-  if(recebido[bufferIndex-1] == ';'){
+  if(recebido[bufferIndex-1] == '\n'){
     comandoRecebido(recebido);
     bufferIndex = 0;
     for(char i=0; i < USART_BUFFER_SIZE; i++)

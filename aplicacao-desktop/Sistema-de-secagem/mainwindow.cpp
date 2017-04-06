@@ -19,9 +19,24 @@ MainWindow::~MainWindow(){
 }
 
 void MainWindow::receberComando(){
-    if(serial.waitForReadyRead(200)){
+    if(serial.waitForReadyRead(100)){
         QString response = serial.readAll();
-        qDebug()<<"Response: " << response;
+
+        QStringList comandos = response.split("\n");
+
+        foreach (QString comando, comandos) {
+            if(comando.length()){
+                if(response.indexOf("finalizado") > -1){
+                    timer->stop();
+                    ui->pushButton->setEnabled(true);
+                    ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
+                    ui->labelStatus->setText("Finalizado");
+                    ui->comboBox->setEnabled(true);
+                } else if(response.indexOf("tempo:") > -1){
+                    qDebug() << response;
+                }
+            }
+        }
     }
 }
 
@@ -31,7 +46,18 @@ void MainWindow::on_pushButton_clicked(){
     ui->labelStatusIcone->setPixmap(QPixmap(":/img/ventilador.png"));
     ui->labelStatus->setText("Secando");
     ui->comboBox->setEnabled(false);
-    serial.write("iniciarSecagem;");
+    serial.write("iniciar\n");
+
+    if(serial.waitForReadyRead(50)){
+        QString response = serial.readAll();
+        qDebug()<<"Response: " << response;
+
+        if(response.indexOf("iniciando\n") > -1){
+            timer->setInterval(100);
+            timer->start();
+        }
+    }
+
 }
 
 void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada){
@@ -77,9 +103,7 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
             QString response = serial.readAll();
             qDebug()<<"Response: " << response;
 
-            if(response.indexOf("standBy;") > -1){
-                timer->setInterval(500);
-                timer->start();
+            if(response.indexOf("pronto\n") > -1){
                 ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                 ui->labelStatus->setText("Conectado");
                 ui->pushButton->setEnabled(true);
