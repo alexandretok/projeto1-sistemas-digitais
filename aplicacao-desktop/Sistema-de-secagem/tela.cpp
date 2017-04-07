@@ -41,6 +41,18 @@ void Tela::paintEvent(QPaintEvent *){
     /* Desenha eixo X */
     painter.drawLine(QPoint(margem, height() - margem), QPoint(width() - margem, height() - margem));
 
+    // Escala Y
+    for(int i=0; i <= 100; i+=10){
+        painter.drawLine(margem - 5, height() - margem - ((height() - margem)/90) * i, margem + 5, height() - margem - ((height() - margem)/90) * i);
+        painter.drawText(margem - 20, 4 + height() - margem - ((height() - margem)/90) * i, QString::number(i));
+    }
+
+    // Escala Y
+    for(float i=0; i <= 3; i+=0.5){
+        painter.drawLine(margem + ((width() - margem) / 180) * (i * 60), height() - margem - 5, margem + ((width() - margem) / 180) * (i * 60), height() - margem + 5);
+        painter.drawText(margem + ((width() - margem) / 180) * (i * 60) - 6, height() - margem + 17, QString::number(i));
+    }
+
     for (int i=0; i < this->index; i++){
         pen.setColor(Qt::blue); pen.setWidth(3); painter.setPen(pen);
         QPoint pontoAtual = QPoint(margem + ((width() - margem) / 180) * (tempo[i] * 60),height() - margem - ((height() - margem)/90) * ventilador[i] );

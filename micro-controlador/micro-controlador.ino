@@ -44,7 +44,7 @@
 
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
-const char interruptsPorSegundo = 16; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
+const char interruptsPorSegundo = 61; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
 
 char recebido[USART_BUFFER_SIZE], bufferIndex = 0;
 unsigned char segundosPassados = 0;
@@ -127,7 +127,7 @@ int main(void){
 
       // Verifica se acabou o ciclo de resfriamento, se sim desligar o sistema e reiniciar as variaveis
       if(segundosPassados >= 180){
-        enviarComando("finalizada");
+        enviarComando("fim");
         sistemaAtivado = false;
         segundosPassados = 0;
         quantidadeInterrupts = 0;

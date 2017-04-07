@@ -26,7 +26,7 @@ void MainWindow::receberComando(){
 
         foreach (QString comando, comandos) {
             if(comando.length()){
-                if(comando.indexOf("finalizado") > -1){
+                if(comando.indexOf("fim") > -1){
                     timer->stop();
                     ui->pushButton->setEnabled(true);
                     ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
@@ -43,15 +43,14 @@ void MainWindow::receberComando(){
                             ventilador = item.replace(QString("vel:"), QString("")).toInt();
                             ui->lcdVentilador->display(ventilador);
                         } else if(item.indexOf("alf:") > -1){
-                            qDebug() << "item: " << item;
                             alfa = item.replace(QString("alf:"), QString("")).toFloat();
-                            qDebug() << "alfa: " << alfa;
                             ui->lcdLuminosidade->display(alfa);
                         }
+
                     }
 
                     ui->tela->adicionarPonto(tempo, ventilador);
-                }
+                } else qDebug () << "comando não reconhecido: " << comando;
             }
         }
     }
