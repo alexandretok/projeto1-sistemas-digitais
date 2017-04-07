@@ -44,9 +44,9 @@
 
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
-const char interruptsPorSegundo = 61; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
+const char interruptsPorSegundo = 6; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
 
-char recebido[USART_BUFFER_SIZE], bufferIndex = 0;
+char recebido[USART_BUFFER_SIZE], bufferIndex = 0, curva = 1;
 unsigned char segundosPassados = 0;
 
 bool enviarDados = true;
@@ -100,8 +100,19 @@ int main(void){
       alfa = ADC * 0.000131579 + 0.9;
       if(alfa < 0.9) alfa = 0.9;
       if(alfa > 1) alfa = 1;
+
+      switch(curva){
+        case 1:
+          dutyCycle = curvaArroz(float(segundosPassados) / 60.0) * alfa;
+          break;
+        case 2:
+          dutyCycle = curvaCafe(float(segundosPassados) / 60.0) * alfa;
+          break;
+        case 3:
+          dutyCycle = curvaMilho(float(segundosPassados) / 60.0) * alfa;
+          break;
+      }
       
-      dutyCycle = curvaDeResfriamento(float(segundosPassados) / 60.0) * alfa;
       
       // Verifica se ja se passou mais um segundo, se sim habilita envio de dados
       if(quantidadeInterrupts >= interruptsPorSegundo){
@@ -133,12 +144,11 @@ int main(void){
         quantidadeInterrupts = 0;
         dutyCycle = 0;
       }
-    } else {
-     
-        
+    } else {   
       // Fica verificando se o botão power foi pressionado
       if(~PIND & (1 << PORTD2)){
         sistemaAtivado = true;
+        curva = 1;
         enviarComando("iniciando");
       }
     }
@@ -161,7 +171,7 @@ ISR(TIMER0_OVF_vect){
 /**
  * Essa função representa a curva de secagem
  */
-char curvaDeResfriamento(double tempo){
+char curvaArroz(double tempo){
   if(tempo <= 0.5)
     return 60 * tempo;
   else if(tempo <= 1.0)
@@ -172,6 +182,40 @@ char curvaDeResfriamento(double tempo){
     return 75;
   else if(tempo <= 3.0)
     return -75 * (tempo - 3);
+  else return 0;
+}
+
+/**
+ * Essa função representa a curva de secagem
+ */
+char curvaCafe(double tempo){
+  if(tempo <= 1.5)
+    return 75;
+  else if(tempo <= 1.7)
+    return -187.5 * tempo + 356.25;
+  else if(tempo <= 2.8)
+    return 37;
+  else if(tempo <= 3.0)
+    return -187.5 * tempo + 562.5;
+  else return 0;
+}
+
+/**
+ * Essa função representa a curva de secagem
+ */
+char curvaMilho(double tempo){
+  if(tempo <= 0.5)
+    return 75;
+  else if(tempo <= 1.0)
+    return 50;
+  else if(tempo <= 1.5)
+    return 75;
+  else if(tempo <= 2.0)
+    return 50;
+  else if(tempo <= 2.5)
+    return 75;
+  else if(tempo <= 3.0)
+    return 50;
   else return 0;
 }
 
@@ -186,8 +230,17 @@ void enviarComando(const char *comando){
 }
 
 void comandoRecebido(char * comando){
-  if(strcmp(comando, "iniciar\n") == 0){
+  if(strcmp(comando, "iniciar1\n") == 0){
     enviarComando("iniciando\0");
+    curva = 1;
+    sistemaAtivado = true;
+  } else if(strcmp(comando, "iniciar2\n") == 0){
+    enviarComando("iniciando\0");
+    curva = 2;
+    sistemaAtivado = true;
+  } else if(strcmp(comando, "iniciar3\n") == 0){
+    enviarComando("iniciando\0");
+    curva = 3;
     sistemaAtivado = true;
   } else
     enviarComando("recebi comando inválido");

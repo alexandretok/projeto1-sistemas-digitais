@@ -14,6 +14,11 @@ void Tela::adicionarPonto(float tempo, int ventilador){
     repaint();
 }
 
+void Tela::zerar(){
+    this->index = 0;
+    this->repaint();
+}
+
 void Tela::paintEvent(QPaintEvent *){
     QPainter painter(this);
     QBrush brush;

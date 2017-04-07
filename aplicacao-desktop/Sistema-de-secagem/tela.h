@@ -13,9 +13,10 @@ class Tela : public QWidget
 public:
     explicit Tela(QWidget *parent = 0);
     void adicionarPonto(float tempo, int ventilador);
+    void zerar();
 private:
-    float tempo[180];
-    int ventilador[180], index = 0;
+    float tempo[200];
+    int ventilador[200], index = 0;
 signals:
 
 public slots:

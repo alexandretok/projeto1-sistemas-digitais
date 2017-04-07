@@ -27,11 +27,26 @@ void MainWindow::receberComando(){
         foreach (QString comando, comandos) {
             if(comando.length()){
                 if(comando.indexOf("fim") > -1){
-                    timer->stop();
+                    timer->setInterval(1000);
                     ui->pushButton->setEnabled(true);
                     ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                     ui->labelStatus->setText("Finalizado");
                     ui->comboBox->setEnabled(true);
+                    ui->radioArroz->setEnabled(true);
+                    ui->radioCafe->setEnabled(true);
+                    ui->radioMilho->setEnabled(true);
+                } else if(comando.indexOf("iniciando") > -1){
+                    ui->radioArroz->setChecked(true);
+                    ui->radioArroz->setEnabled(false);
+                    ui->radioCafe->setEnabled(false);
+                    ui->radioMilho->setEnabled(false);
+                    ui->tela->zerar();
+                    timer->setInterval(100);
+                    ui->labelCliqueIniciar->setVisible(false);
+                    ui->pushButton->setEnabled(false);
+                    ui->labelStatusIcone->setPixmap(QPixmap(":/img/ventilador.png"));
+                    ui->labelStatus->setText("Secando");
+                    ui->comboBox->setEnabled(false);
                 } else if(comando.indexOf("tmp:") > -1){
                     QStringList lista = comando.split("&");
                     int ventilador;
@@ -62,13 +77,23 @@ void MainWindow::on_pushButton_clicked(){
     ui->labelStatusIcone->setPixmap(QPixmap(":/img/ventilador.png"));
     ui->labelStatus->setText("Secando");
     ui->comboBox->setEnabled(false);
-    serial.write("iniciar\n");
+
+    if(ui->radioArroz->isChecked())
+        serial.write("iniciar1\n");
+    else if(ui->radioCafe->isChecked())
+        serial.write("iniciar2\n");
+    else if(ui->radioMilho->isChecked())
+        serial.write("iniciar3\n");
 
     if(serial.waitForReadyRead(50)){
         QString response = serial.readAll();
         qDebug()<<"Response: " << response;
 
         if(response.indexOf("iniciando\n") > -1){
+            ui->tela->zerar();
+            ui->radioArroz->setEnabled(false);
+            ui->radioCafe->setEnabled(false);
+            ui->radioMilho->setEnabled(false);
             timer->setInterval(100);
             timer->start();
         }
@@ -120,6 +145,8 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
             qDebug()<<"Response: " << response;
 
             if(response.indexOf("pronto\n") > -1){
+                timer->setInterval(1000);
+                timer->start();
                 ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                 ui->labelStatus->setText("Conectado");
                 ui->pushButton->setEnabled(true);
@@ -156,17 +183,17 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
     }
 }
 
-void MainWindow::on_radioButton_2_toggled(bool checked){
+void MainWindow::on_radioArroz_toggled(bool checked){
     if(checked == true)
         ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_arroz.png"));
 }
 
-void MainWindow::on_radioButton_toggled(bool checked){
+void MainWindow::on_radioCafe_toggled(bool checked){
     if(checked == true)
         ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_cafe.png"));
 }
 
-void MainWindow::on_radioButton_3_toggled(bool checked){
+void MainWindow::on_radioMilho_toggled(bool checked){
     if(checked == true)
         ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_milho.png"));
 }

@@ -26,12 +26,9 @@ private slots:
     void on_pushButton_clicked();
     void receberComando();
     void on_comboBox_currentIndexChanged(const QString &arg1);
-
-    void on_radioButton_2_toggled(bool checked);
-
-    void on_radioButton_toggled(bool checked);
-
-    void on_radioButton_3_toggled(bool checked);
+    void on_radioArroz_toggled(bool checked);
+    void on_radioCafe_toggled(bool checked);
+    void on_radioMilho_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

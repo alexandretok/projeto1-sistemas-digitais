@@ -169,7 +169,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/img/desconectado.png</pixmap>
+            <pixmap resource="res.qrc">:/img/desconectado.png</pixmap>
            </property>
           </widget>
          </item>
@@ -266,7 +266,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,0,0,0,0,0,0,0">
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="radioArroz">
            <property name="font">
             <font>
              <pointsize>8</pointsize>
@@ -289,7 +289,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/img/arroz.png</pixmap>
+            <pixmap resource="res.qrc">:/img/arroz.png</pixmap>
            </property>
           </widget>
          </item>
@@ -307,7 +307,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="radioCafe">
            <property name="font">
             <font>
              <pointsize>8</pointsize>
@@ -327,7 +327,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/img/cafe.png</pixmap>
+            <pixmap resource="res.qrc">:/img/cafe.png</pixmap>
            </property>
           </widget>
          </item>
@@ -345,7 +345,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="radioMilho">
            <property name="font">
             <font>
              <pointsize>8</pointsize>
@@ -365,7 +365,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>:/img/milho.png</pixmap>
+            <pixmap resource="res.qrc">:/img/milho.png</pixmap>
            </property>
           </widget>
          </item>
@@ -377,7 +377,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/img/grafico_arroz.png</pixmap>
+          <pixmap resource="res.qrc">:/img/grafico_arroz.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -411,7 +411,7 @@
      <x>0</x>
      <y>0</y>
      <width>941</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
@@ -425,6 +425,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>
