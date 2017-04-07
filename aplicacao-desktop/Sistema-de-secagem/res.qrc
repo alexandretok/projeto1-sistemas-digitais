@@ -6,6 +6,8 @@
         <file>arroz.png</file>
         <file>cafe.png</file>
         <file>milho.png</file>
-        <file>grafico_arroz.jpg</file>
+        <file>grafico_arroz.png</file>
+        <file>grafico_cafe.png</file>
+        <file>grafico_milho.png</file>
     </qresource>
 </RCC>

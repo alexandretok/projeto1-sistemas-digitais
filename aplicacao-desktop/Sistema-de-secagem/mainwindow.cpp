@@ -26,14 +26,31 @@ void MainWindow::receberComando(){
 
         foreach (QString comando, comandos) {
             if(comando.length()){
-                if(response.indexOf("finalizado") > -1){
+                if(comando.indexOf("finalizado") > -1){
                     timer->stop();
                     ui->pushButton->setEnabled(true);
                     ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                     ui->labelStatus->setText("Finalizado");
                     ui->comboBox->setEnabled(true);
-                } else if(response.indexOf("tempo:") > -1){
-                    qDebug() << response;
+                } else if(comando.indexOf("tmp:") > -1){
+                    QStringList lista = comando.split("&");
+                    int ventilador;
+                    float tempo, alfa;
+                    foreach (QString item, lista) {
+                        if(item.indexOf("tmp:") > -1){
+                            tempo = item.replace(QString("tmp:"), QString("")).toFloat();
+                        } else if(item.indexOf("vel:") > -1){
+                            ventilador = item.replace(QString("vel:"), QString("")).toInt();
+                            ui->lcdVentilador->display(ventilador);
+                        } else if(item.indexOf("alf:") > -1){
+                            qDebug() << "item: " << item;
+                            alfa = item.replace(QString("alf:"), QString("")).toFloat();
+                            qDebug() << "alfa: " << alfa;
+                            ui->lcdLuminosidade->display(alfa);
+                        }
+                    }
+
+                    ui->tela->adicionarPonto(tempo, ventilador);
                 }
             }
         }
@@ -107,6 +124,10 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
                 ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
                 ui->labelStatus->setText("Conectado");
                 ui->pushButton->setEnabled(true);
+            } else {
+                QMessageBox msgBox;
+                msgBox.setText("O dispositivo respondeu incorretamente.\nTente novamente.");
+                msgBox.exec();
             }
         }else{
             QMessageBox msgBox;
@@ -134,4 +155,19 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada
             msgBox.setText("Ocorreu um erro ao conectar-se à porta: \n\n" + serial.errorString());
         msgBox.exec();
     }
+}
+
+void MainWindow::on_radioButton_2_toggled(bool checked){
+    if(checked == true)
+        ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_arroz.png"));
+}
+
+void MainWindow::on_radioButton_toggled(bool checked){
+    if(checked == true)
+        ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_cafe.png"));
+}
+
+void MainWindow::on_radioButton_3_toggled(bool checked){
+    if(checked == true)
+        ui->labelGrafico->setPixmap(QPixmap(":/img/grafico_milho.png"));
 }

@@ -20,9 +20,9 @@
    <string>Sistema de Secagem 1.0</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="4,2">
+   <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="5,2">
     <item>
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="Tela" name="tela" native="true">
       <property name="styleSheet">
        <string notr="true">background-color: white;</string>
       </property>
@@ -169,7 +169,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/img/desconectado.png</pixmap>
+            <pixmap>:/img/desconectado.png</pixmap>
            </property>
           </widget>
          </item>
@@ -201,7 +201,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLCDNumber" name="lcdNumber">
+          <widget class="QLCDNumber" name="lcdVentilador">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -210,6 +210,9 @@
            </property>
            <property name="styleSheet">
             <string notr="true"/>
+           </property>
+           <property name="digitCount">
+            <number>4</number>
            </property>
            <property name="value" stdset="0">
             <double>0.000000000000000</double>
@@ -237,7 +240,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLCDNumber" name="lcdNumber_2">
+          <widget class="QLCDNumber" name="lcdLuminosidade">
            <property name="frameShape">
             <enum>QFrame::Box</enum>
            </property>
@@ -247,8 +250,14 @@
            <property name="smallDecimalPoint">
             <bool>false</bool>
            </property>
+           <property name="digitCount">
+            <number>4</number>
+           </property>
            <property name="segmentStyle">
             <enum>QLCDNumber::Filled</enum>
+           </property>
+           <property name="value" stdset="0">
+            <double>0.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -280,7 +289,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/img/arroz.png</pixmap>
+            <pixmap>:/img/arroz.png</pixmap>
            </property>
           </widget>
          </item>
@@ -318,7 +327,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/img/cafe.png</pixmap>
+            <pixmap>:/img/cafe.png</pixmap>
            </property>
           </widget>
          </item>
@@ -356,19 +365,19 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="res.qrc">:/img/milho.png</pixmap>
+            <pixmap>:/img/milho.png</pixmap>
            </property>
           </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_12">
+        <widget class="QLabel" name="labelGrafico">
          <property name="text">
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="res.qrc">:/img/grafico_arroz.jpg</pixmap>
+          <pixmap>:/img/grafico_arroz.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -408,8 +417,14 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <customwidgets>
+  <customwidget>
+   <class>Tela</class>
+   <extends>QWidget</extends>
+   <header>tela.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
  <connections/>
 </ui>

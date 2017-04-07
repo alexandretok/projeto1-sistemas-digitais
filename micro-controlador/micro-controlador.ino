@@ -112,11 +112,15 @@ int main(void){
   
       // Envia os dados uma vez por segundo
       if(enviarDados == true){
-        String comando = "tempo:";
+        String comando = "tmp:";
         comando.concat(float(segundosPassados) / 60.0);
 
-        comando.concat("&ventilador:");
+        comando.concat("&vel:");
         comando.concat(int(dutyCycle));
+
+        comando.concat("&alf:");
+        comando.concat((float)alfa);
+        
         enviarComando(comando.c_str());
         enviarDados = false;
       }
