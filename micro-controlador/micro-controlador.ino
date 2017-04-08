@@ -44,13 +44,15 @@
 
 char dutyCycle = 0; // Porcentagem do motor
 volatile int quantidadeInterrupts = 0;
-const char interruptsPorSegundo = 6; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
+const char interruptsPorSegundo = 61; //61; // (16MHz / prescaler * 256) (Fast PWM Mode)
 
 char recebido[USART_BUFFER_SIZE], bufferIndex = 0, curva = 1;
 unsigned char segundosPassados = 0;
 
 bool enviarDados = true;
 bool sistemaAtivado = false;
+
+int sensor;
 
 float alfa = 1.0;
 
@@ -72,7 +74,7 @@ int main(void){
   PORTD = 1 << PORTD2; // Ativa o pull up do pino PORTD2 (Pino 2 no Arduino)
 
   // Clear OC0A on Compare Match, set OC0A at BOTTOM, (non-inverting mode)
-  TCCR0A  = (1 << COM0A1);
+  TCCR0A  = (1 << COM0A1) | (1 << COM0B1);
 
   // Seta tipo de PWM para Fast PWM, TOP: 0xFF, Update of OCRx at BOTTOM, TOV flag set on MAX
   TCCR0A |= (1 << WGM00) | (1 << WGM01);
@@ -97,7 +99,10 @@ int main(void){
       while(!(ADCSRA & 0b00010000)); // Aguarda termino da leitura
 
       // Alfa = valor de 0.9 a 1 que sera multiplicado pelo dutyCycle
-      alfa = ADC * 0.000131579 + 0.9;
+      sensor = ADC;
+      OCR0B = (int)(sensor / 4);
+      alfa = (float)sensor * 0.000131579 + 0.9;
+      
       if(alfa < 0.9) alfa = 0.9;
       if(alfa > 1) alfa = 1;
 
