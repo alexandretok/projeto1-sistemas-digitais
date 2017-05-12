@@ -1,39 +1,6 @@
-/* Projeto de Sistemas Digitais - UFRN / DCA - 2017.1
- *
- * Componentes:
- * 1. Alexandre Justino
- * 2. Íkaro Breno
- * 3. João Fernandes
- * 4. Glauco Dantas
- *
- * Objetivo: Controlar um sistema de resfriamento, que possui os seguintes componentes:
- * 1. Ventilador
- * 2. Sensor analógico (luminosidade para verificar se há sol ou de temperatura)
- * 3. Um botão para ligar
- * 4. Três LEDs para informar o status do sistema
- *
- * Funcionamento do sistema:
- * 1. O motor do ventilador será controlado via PWM
- * 2. O LED 1 terá sempre o mesmo duty cicle do motor
- * 3. O LED 2 terá um duty cicle proporcional ao valor do sensor analógico (LDR ou temperatura)
- * 4. O LED 3 informa ON/OFF
- * 5. O motor deve seguir a seguinte curva de secagem:
- *   a. De 0 a 30 segundos: função linear crescente que vai de 0% a 30%
- *   b. De 30 a 60 segundos: função constante em 30%
- *   c. De 60 a 90 segundos: função linear crescente que vai de 30% a 75%
- *   d. De 90 a 120 segundos: função constante em 75%
- *   e. De 120 a 180 segundos: função linear decrescente que vai de 75% a 0%
- */
-
- /*
-  * Pinagem:
-  * Saída PWM 0A (do motor): PORTD6 (Pino 6 no Arduino)
-  * Saída PWM 0B (do sensor): PORTD5 (Pino 5 no Arduino)
-  * Entrada I/O do botão power: PORTD2 (Pino 2 no Arduino)
-  */
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 
 #define F_CPU 16000000
 #define BAUD 9600
@@ -263,4 +230,3 @@ ISR(USART_RX_vect){
       recebido[i] = '\0';
   }
 }
-
