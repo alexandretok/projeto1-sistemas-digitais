@@ -17,7 +17,7 @@ LED_SENSOR = 6
 ANALOG_SENSOR = 0
 
 # Constantes
-PORT = 666
+PORT = 6666
 
 # Configura socket
 listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,13 +28,9 @@ listen_socket.listen(1)
 def rx():
 	global conectado, client_connection, client_address, listen_socket, sistemaAtivo
 
-	while conectado == False:
-		try:
-			client_connection, client_address = listen_socket.accept()
-			client_connection.settimeout(5)
-			conectado = True
-		except:
-			conectado = False
+	client_connection, client_address = listen_socket.accept()
+	client_connection.settimeout(5)
+	conectado = True
 
 	while True:
 		try:
@@ -52,7 +48,7 @@ def rx():
 				curva = valor
 				sistemaAtivo = True
 		except:
-			null = False
+			null = False # Timeout
 
 def tx():
 	global sistemaAtivo, conectado, client_connection, dutyCycle, tempoInicio, alfa
