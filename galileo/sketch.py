@@ -141,6 +141,8 @@ def curvaMilho(tempo):
 # Declaracao das threas utilizadas
 t1 = threading.Thread(name='conexao', target=conexao)
 t2 = threading.Thread(name='adc', target=adc)
+t3 = threading.Thread(name='rx', target=rx)
+t4 = threading.Thread(name='tx', target=tx)
 
 # Configura botao de ON/OFF
 botao = mraa.Gpio(BOTAO)
@@ -149,6 +151,8 @@ botao.dir(mraa.DIR_IN)
 # Inicia as threads
 t1.start()
 t2.start()
+t3.start()
+t4.start()
 
 # Loop principal
 while True:
