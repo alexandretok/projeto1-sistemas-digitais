@@ -1,60 +1,96 @@
 import threading
 import time
 import mraa
+import socket
 
+# Configuracao inicial
 sistemaAtivo = False
 tempoMaximo = 180
+curva = "arroz"
+dutyCycle = 0
+alfa = 1
 
+# Portas utilizadas
 BOTAO = 2
 MOTOR = 5
 LED_SENSOR = 6
 ANALOG_SENSOR = 0
 
-def led_blink1():
-	x = mraa.Gpio(9)
-	x.dir(mraa.DIR_OUT)
-	global sistemaAtivo
+# Constantes
+PORT = 6666
+
+# Configura socket
+listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+listen_socket.bind((socket.gethostname(), PORT))
+listen_socket.listen(1)
+
+def rx():
+	global conectado, client_connection, client_address, listen_socket, sistemaAtivo
+
+	client_connection, client_address = listen_socket.accept()
+	client_connection.settimeout(5)
+	conectado = True
 
 	while True:
-		if sistemaAtivo:
-			x.write(1)
-			time.sleep(0.5)
-			x.write(0)
-			time.sleep(0.5)
+		try:
+			acao = client_connection.recv(1024).replace("\r\n", "")
+			if acao.find("=") >= 0:
+				tmp = acao.split("=")
+				acao = tmp[0]
+				valor = tmp[1]
 
-def led_blink2():
-	x = mraa.Gpio(8)
-	x.dir(mraa.DIR_OUT)
+			if acao == "ola":
+				print "recebido ola"
+				client_connection.send("ola")
+			elif acao == "iniciar":
+				print "recebido iniciar"
+				curva = valor
+				sistemaAtivo = True
+		except:
+			null = False # Timeout
+
+def tx():
+	global sistemaAtivo, conectado, client_connection, dutyCycle, tempoInicio, alfa
 
 	while True:
-		if sistemaAtivo:
-			x.write(1)
-			time.sleep(0.8)
-			x.write(0)
-			time.sleep(0.8)
+		time.sleep(1)
+		if sistemaAtivo and conectado:
+			print "Enviando dados"
+			client_connection.send("tempo=" + str((time.time() - tempoInicio) / 60) + "&velocidade=" + dutyCycle + "&alfa=" + str(alfa))
+			ultimoEnvio = time.time()
 
+# Thread que le o ADC e controla o duty cycle do motor
 def adc():
+	global tempoInicio, sistemaAtivo, alfa, dutyCycle
+
 	adc = mraa.Aio(ANALOG_SENSOR)
 	motor = mraa.Pwm(MOTOR)
 	motor.period_us(700)
 	motor.enable(True)
-
-	global tempoInicio
+	ledSensor = mraa.Pwm(LED_SENSOR)
+	ledSensor.period_us(700)
+	ledSensor.enable(True)
 
 	while True:
 		if sistemaAtivo:
 			time.sleep(0.05)
-			alfa = (adc.read() / 4) * 0.000131579 + 0.9
+			luminosidade = adc.read() / 4
+
+			alfa = luminosidade * 0.000131579 + 0.9
 			if alfa < 0.9:
 				alfa = 0.9
 			if alfa > 1:
 				alfa = 1
 			
-			dutyCycle = curvaArroz((time.time() - tempoInicio)/60)
+			if curva == "arroz":
+				dutyCycle = curvaArroz((time.time() - tempoInicio)/60)
+			elif curva == "milho":
+				dutyCycle = curvaMilho((time.time() - tempoInicio)/60)
+			elif curva == "cafe":
+				dutyCycle = curvaCafe((time.time() - tempoInicio)/60)
 
-			motor.write(dutyCycle)
-			print "duty: "
-			print dutyCycle
+			motor.write(dutyCycle / 100)
 
 def curvaArroz(tempo):
   if tempo <= 0.5:
@@ -98,20 +134,28 @@ def curvaMilho(tempo):
   else:
   	return 0
 
-t1 = threading.Thread(name='led_blink2', target=led_blink2)
-t2 = threading.Thread(name='led_blink1', target=led_blink1)
-t3 = threading.Thread(name='adc', target=adc)
+# Declaracao das threas utilizadas
+t1 = threading.Thread(name='conexao', target=conexao)
+t2 = threading.Thread(name='adc', target=adc)
+t3 = threading.Thread(name='rx', target=rx)
+t4 = threading.Thread(name='tx', target=tx)
 
+# Configura botao de ON/OFF
 botao = mraa.Gpio(BOTAO)
 botao.dir(mraa.DIR_IN)
+
+# Inicia as threads
 t1.start()
 t2.start()
 t3.start()
+t4.start()
 
+# Loop principal
 while True:
 	if botao.read() and not sistemaAtivo:
+		print "Secagem iniciada"
 		tempoInicio = time.time()
 		sistemaAtivo = True
 	if sistemaAtivo and (time.time() - tempoInicio >= tempoMaximo):
-		print "finalizando..."
+		print "Secagem finalizada"
 		sistemaAtivo = False
