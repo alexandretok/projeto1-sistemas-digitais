@@ -13,19 +13,19 @@ ss2.dir(mraa.DIR_OUT)
 
 while True:
 	print "Enviando 1..."
-	ss1.write(1) # Informa o slave que vai enviar dados 
+	ss1.write(0) # Informa o slave 1 que vai enviar dados 
 	time.sleep(0.01)
-	received = spi.writeByte(1) # Envia um byte
+	received = spi.writeByte(1) # Envia um byte ao barramento
 	print "Recebendo " + str(received) + "..."
-	ss1.write(0) # Encerra recebimento do slave
+	ss1.write(1) # Encerra recebimento do slave
 
 	time.sleep(2)
 
 	print "Enviando 2..."
-	ss2.write(1) # Informa o slave que vai enviar dados 
+	ss2.write(0) # Informa o slave 2 que vai enviar dados 
 	time.sleep(0.01)
-	received = spi.writeByte(1) # Envia um byte
+	received = spi.writeByte(3) # Envia um byte ao barramento
 	print "Recebendo " + str(received) + "..."
-	ss2.write(0) # Encerra recebimento do slave
+	ss2.write(1) # Encerra recebimento do slave
 
 	time.sleep(2)
