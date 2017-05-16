@@ -16,16 +16,19 @@ MainWindow::~MainWindow(){
 
 void MainWindow::ler(){
     QString recebido = tcpSocket->read(256);
-    qDebug() << "Recebido via socket: " << recebido;
+//    qDebug() << "Recebido via socket: " << recebido;
+
     QStringList lista = recebido.split("&");
-    qDebug() << lista;
+//    qDebug() << lista;
     int ventilador;
     float tempo, alfa;
     foreach (QString item, lista) {
         if(item.indexOf("tempo=") > -1){
             tempo = item.replace(QString("tempo="), QString("")).toFloat();
         } else if(item.indexOf("velocidade=") > -1){
-            ventilador = item.replace(QString("velocidade="), QString("")).toInt();
+            qDebug() << "item:" << item;
+            ventilador = (int)item.replace(QString("velocidade="), QString("")).toFloat();
+            qDebug() << "ventilador:" << ventilador;
             ui->lcdVentilador->display(ventilador);
         } else if(item.indexOf("alfa=") > -1){
             alfa = item.replace(QString("alfa="), QString("")).toFloat();

@@ -5,7 +5,8 @@ import socket
 
 # Configuracao inicial
 sistemaAtivo = False
-tempoMaximo = 180
+tempoMaximo = 10
+tempoInicio = time.time()
 curva = "arroz"
 dutyCycle = 0
 alfa = 1
@@ -13,9 +14,30 @@ conectado = False
 
 # Portas utilizadas
 BOTAO = 2
-MOTOR = 5
-LED_SENSOR = 6
+LED_BOTAO = 3
+MOTOR = 6
+LED_SENSOR = 5
 ANALOG_SENSOR = 0
+
+# Configura botao de ON/OFF e LED Status
+botao = mraa.Gpio(BOTAO)
+botao.dir(mraa.DIR_IN)
+botao.write(0)
+ledBotao = mraa.Gpio(LED_BOTAO)
+ledBotao.dir(mraa.DIR_OUT)
+ledBotao.write(0)
+
+# Configura Motor e ADC
+adc = mraa.Aio(ANALOG_SENSOR)
+motor = mraa.Pwm(MOTOR)
+motor.period_us(700)
+motor.enable(True)
+motor.write(0)
+
+# Configura LED do sensor
+ledSensor = mraa.Pwm(LED_SENSOR)
+ledSensor.period_us(700)
+ledSensor.enable(True)
 
 # Constantes
 PORT = 6666
@@ -26,8 +48,8 @@ listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 listen_socket.bind(('', PORT))
 listen_socket.listen(1)
 
-def rx():
-	global conectado, client_connection, client_address, listen_socket, sistemaAtivo
+def rxThread():
+	global conectado, client_connection, client_address, listen_socket, sistemaAtivo, tempoInicio, curva
 
 	client_connection, client_address = listen_socket.accept()
 	client_connection.settimeout(5)
@@ -42,51 +64,46 @@ def rx():
 				valor = tmp[1]
 
 			if acao == "iniciar":
-				print "recebido iniciar"
+				print "Iniciando secagem..."
 				curva = valor
 				sistemaAtivo = True
+				tempoInicio = time.time()
+				ledBotao.write(1)
 		except:
 			null = False # Timeout
 
-def tx():
-	global sistemaAtivo, conectado, client_connection, dutyCycle, tempoInicio, alfa
+def txThread():
+	global sistemaAtivo, conectado, client_connection, dutyCycle, tempoInicio, alfa, tempoMaximo
 
 	while True:
 		time.sleep(1)
 		if sistemaAtivo and conectado:
-			print "Enviando dados"
-			client_connection.send("tempo=" + str((time.time() - tempoInicio) / 60) + "&velocidade=" + dutyCycle + "&alfa=" + str(alfa))
+			client_connection.send("tempo=" + str((time.time() - tempoInicio) / 60) + "&velocidade=" + str(dutyCycle) + "&alfa=" + str(alfa))
 			ultimoEnvio = time.time()
+		if sistemaAtivo and conectado and (time.time() - tempoInicio >= tempoMaximo):
+			client_connection.send("fim")
 
 # Thread que le o ADC e controla o duty cycle do motor
-def adc():
-	global tempoInicio, sistemaAtivo, alfa, dutyCycle
-
-	adc = mraa.Aio(ANALOG_SENSOR)
-	motor = mraa.Pwm(MOTOR)
-	motor.period_us(700)
-	motor.enable(True)
-	ledSensor = mraa.Pwm(LED_SENSOR)
-	ledSensor.period_us(700)
-	ledSensor.enable(True)
+def adcThread():
+	global tempoInicio, sistemaAtivo, alfa, dutyCycle, motor, adc, ledSensor
 
 	while True:
 		if sistemaAtivo:
-			time.sleep(0.05)
+			time.sleep(0.1)
 			luminosidade = adc.read() / 4
 
-			alfa = luminosidade * 0.000131579 + 0.9
+			alfa = luminosidade * 0.000999 + 0.89
 			if alfa < 0.9:
 				alfa = 0.9
 			if alfa > 1:
 				alfa = 1
 			
 			if curva == "arroz":
-				dutyCycle = curvaArroz((time.time() - tempoInicio)/60)
+				dutyCycle = curvaArroz((time.time() - tempoInicio)/60) * alfa
 			elif curva == "milho":
-				dutyCycle = curvaMilho((time.time() - tempoInicio)/60)
+				dutyCycle = curvaMilho((time.time() - tempoInicio)/60) * alfa
 			elif curva == "cafe":
-				dutyCycle = curvaCafe((time.time() - tempoInicio)/60)
+				dutyCycle = curvaCafe((time.time() - tempoInicio)/60) * alfa
 
 			motor.write(dutyCycle / 100)
 
@@ -133,13 +150,9 @@ def curvaMilho(tempo):
   	return 0
 
 # Declaracao das threas utilizadas
-t1 = threading.Thread(name='adc', target=adc)
-t2 = threading.Thread(name='rx', target=rx)
-t3 = threading.Thread(name='tx', target=tx)
-
-# Configura botao de ON/OFF
-botao = mraa.Gpio(BOTAO)
-botao.dir(mraa.DIR_IN)
+t1 = threading.Thread(name='adcThread', target=adcThread)
+t2 = threading.Thread(name='rxThread', target=rxThread)
+t3 = threading.Thread(name='txThread', target=txThread)
 
 # Inicia as threads
 t1.start()
@@ -152,6 +165,8 @@ while True:
 		print "Secagem iniciada"
 		tempoInicio = time.time()
 		sistemaAtivo = True
+		ledBotao.write(1)
 	if sistemaAtivo and (time.time() - tempoInicio >= tempoMaximo):
 		print "Secagem finalizada"
 		sistemaAtivo = False
+		ledBotao.write(0)
