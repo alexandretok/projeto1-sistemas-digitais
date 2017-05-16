@@ -5,7 +5,7 @@ import socket
 
 # Configuracao inicial
 sistemaAtivo = False
-tempoMaximo = 10
+tempoMaximo = 180
 tempoInicio = time.time()
 curva = "arroz"
 dutyCycle = 0
