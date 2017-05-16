@@ -27,9 +27,5 @@ ISR(USART_RX_vect) {
   if(recebido == 1) {
     while(!(UCSR0A & (1<<UDRE0))); // Aguarda liberacao para enviar
     UDR0 = 2; // Envia 2
-  } else if(recebido == 3) {
-    // Envia 4
-    while(!(UCSR0A & (1<<UDRE0)));
-    UDR0 = 4; // Envia 4
   }
 }
