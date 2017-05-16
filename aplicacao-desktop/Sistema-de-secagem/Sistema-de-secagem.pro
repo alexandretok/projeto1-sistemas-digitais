@@ -35,4 +35,4 @@ FORMS    += mainwindow.ui
 RESOURCES += \
     res.qrc
 
-QT += serialport
+QT += network

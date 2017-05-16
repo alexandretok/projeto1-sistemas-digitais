@@ -9,6 +9,7 @@ tempoMaximo = 180
 curva = "arroz"
 dutyCycle = 0
 alfa = 1
+conectado = False
 
 # Portas utilizadas
 BOTAO = 2
@@ -22,7 +23,7 @@ PORT = 6666
 # Configura socket
 listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-listen_socket.bind((socket.gethostname(), PORT))
+listen_socket.bind(('', PORT))
 listen_socket.listen(1)
 
 def rx():
@@ -40,10 +41,7 @@ def rx():
 				acao = tmp[0]
 				valor = tmp[1]
 
-			if acao == "ola":
-				print "recebido ola"
-				client_connection.send("ola")
-			elif acao == "iniciar":
+			if acao == "iniciar":
 				print "recebido iniciar"
 				curva = valor
 				sistemaAtivo = True
@@ -135,10 +133,9 @@ def curvaMilho(tempo):
   	return 0
 
 # Declaracao das threas utilizadas
-t1 = threading.Thread(name='conexao', target=conexao)
-t2 = threading.Thread(name='adc', target=adc)
-t3 = threading.Thread(name='rx', target=rx)
-t4 = threading.Thread(name='tx', target=tx)
+t1 = threading.Thread(name='adc', target=adc)
+t2 = threading.Thread(name='rx', target=rx)
+t3 = threading.Thread(name='tx', target=tx)
 
 # Configura botao de ON/OFF
 botao = mraa.Gpio(BOTAO)
@@ -148,7 +145,6 @@ botao.dir(mraa.DIR_IN)
 t1.start()
 t2.start()
 t3.start()
-t4.start()
 
 # Loop principal
 while True:

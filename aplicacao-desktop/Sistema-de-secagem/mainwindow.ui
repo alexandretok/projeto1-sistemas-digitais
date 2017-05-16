@@ -128,17 +128,15 @@
             </font>
            </property>
            <property name="text">
-            <string>Porta:</string>
+            <string>IP:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
-           <item>
-            <property name="text">
-             <string>Selecione...</string>
-            </property>
-           </item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="text">
+            <string>127.0.0.1</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -387,7 +385,7 @@
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="font">
           <font>
@@ -396,7 +394,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Iniciar Secagem</string>
+          <string>Conectar-se</string>
          </property>
         </widget>
        </item>
@@ -411,7 +409,7 @@
      <x>0</x>
      <y>0</y>
      <width>941</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

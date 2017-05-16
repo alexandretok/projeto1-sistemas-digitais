@@ -9,6 +9,7 @@ Tela::Tela(QWidget *parent) : QWidget(parent){
 }
 
 void Tela::adicionarPonto(float tempo, int ventilador){
+    qDebug() << "ponto recebido" << tempo << ", " << ventilador;
     this->tempo[this->index] = tempo;
     this->ventilador[this->index++] = ventilador;
     repaint();

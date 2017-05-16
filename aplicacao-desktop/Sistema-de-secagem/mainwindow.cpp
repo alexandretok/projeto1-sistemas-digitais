@@ -1,24 +1,42 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), tcpSocket(new QTcpSocket(this)){
     ui->setupUi(this);
 
-    foreach(const QSerialPortInfo &info, QSerialPortInfo::availablePorts()){
-        qDebug() << "Name  :" << info.portName();
-        ui->comboBox->addItem(info.portName());
-    }
+    stream.setDevice(tcpSocket);
+    stream.setVersion(QDataStream::Qt_4_0);
 
-    timer = new QTimer(this);
-
-    connect(timer, SIGNAL(timeout()), this, SLOT(receberComando()));
+    connect(tcpSocket, SIGNAL(readyRead()), this, SLOT(ler()));
 }
 
 MainWindow::~MainWindow(){
     delete ui;
 }
 
-void MainWindow::receberComando(){
+void MainWindow::ler(){
+    QString recebido = tcpSocket->read(256);
+    qDebug() << "Recebido via socket: " << recebido;
+    QStringList lista = recebido.split("&");
+    qDebug() << lista;
+    int ventilador;
+    float tempo, alfa;
+    foreach (QString item, lista) {
+        if(item.indexOf("tempo=") > -1){
+            tempo = item.replace(QString("tempo="), QString("")).toFloat();
+        } else if(item.indexOf("velocidade=") > -1){
+            ventilador = item.replace(QString("velocidade="), QString("")).toInt();
+            ui->lcdVentilador->display(ventilador);
+        } else if(item.indexOf("alfa=") > -1){
+            alfa = item.replace(QString("alfa="), QString("")).toFloat();
+            ui->lcdLuminosidade->display(alfa);
+        }
+    }
+
+    ui->tela->adicionarPonto(tempo, ventilador);
+}
+
+/*void MainWindow::receberComando(){
     if(serial.waitForReadyRead(100)){
         QString response = serial.readAll();
 
@@ -48,138 +66,46 @@ void MainWindow::receberComando(){
                     ui->labelStatus->setText("Secando");
                     ui->comboBox->setEnabled(false);
                 } else if(comando.indexOf("tmp:") > -1){
-                    QStringList lista = comando.split("&");
-                    int ventilador;
-                    float tempo, alfa;
-                    foreach (QString item, lista) {
-                        if(item.indexOf("tmp:") > -1){
-                            tempo = item.replace(QString("tmp:"), QString("")).toFloat();
-                        } else if(item.indexOf("vel:") > -1){
-                            ventilador = item.replace(QString("vel:"), QString("")).toInt();
-                            ui->lcdVentilador->display(ventilador);
-                        } else if(item.indexOf("alf:") > -1){
-                            alfa = item.replace(QString("alf:"), QString("")).toFloat();
-                            ui->lcdLuminosidade->display(alfa);
-                        }
 
-                    }
-
-                    ui->tela->adicionarPonto(tempo, ventilador);
                 } else qDebug () << "comando não reconhecido: " << comando;
             }
         }
     }
-}
+}*/
 
 void MainWindow::on_pushButton_clicked(){
-    ui->labelCliqueIniciar->setVisible(false);
-    ui->pushButton->setEnabled(false);
-    ui->labelStatusIcone->setPixmap(QPixmap(":/img/ventilador.png"));
-    ui->labelStatus->setText("Secando");
-    ui->comboBox->setEnabled(false);
+    if(ui->pushButton->text() == QString("Conectar-se")){
+        ui->labelStatus->setText("Conectando...");
+        qApp->processEvents();
 
-    if(ui->radioArroz->isChecked())
-        serial.write("iniciar1\n");
-    else if(ui->radioCafe->isChecked())
-        serial.write("iniciar2\n");
-    else if(ui->radioMilho->isChecked())
-        serial.write("iniciar3\n");
+        qDebug() << "tentando conetar a " + QString(ui->lineEdit->text());
+        tcpSocket->connectToHost(ui->lineEdit->text(), 6666);
 
-    if(serial.waitForReadyRead(50)){
-        QString response = serial.readAll();
-        qDebug()<<"Response: " << response;
-
-        if(response.indexOf("iniciando\n") > -1){
-            ui->tela->zerar();
-            ui->radioArroz->setEnabled(false);
-            ui->radioCafe->setEnabled(false);
-            ui->radioMilho->setEnabled(false);
-            timer->setInterval(100);
-            timer->start();
-        }
-    }
-
-}
-
-void MainWindow::on_comboBox_currentIndexChanged(const QString &portaSelecionada){
-
-    serial.close();
-
-    if(portaSelecionada.indexOf("Selecione...") != -1){
-        ui->labelStatusIcone->setPixmap(QPixmap(":/img/desconectado.png"));
-        ui->labelStatus->setText("Desconectado");
-        ui->pushButton->setEnabled(false);
-        return;
-    }
-
-    ui->labelStatus->setText("Conectando...");
-    qApp->processEvents();
-
-    qDebug() << "Porta selecionada: " << portaSelecionada;
-    serial.setPortName(portaSelecionada);
-
-    if(serial.open(QIODevice::ReadWrite)){
-        if(!serial.setBaudRate(QSerialPort::Baud9600))
-            qDebug() << serial.errorString();
-
-        if(!serial.setDataBits(QSerialPort::Data8))
-            qDebug() << serial.errorString();
-
-        if(!serial.setParity(QSerialPort::NoParity))
-            qDebug()<<serial.errorString();
-
-        if(!serial.setStopBits(QSerialPort::OneStop))
-            qDebug()<<serial.errorString();
-
-        if(!serial.setFlowControl(QSerialPort::NoFlowControl))
-            qDebug()<<serial.errorString();
-
-        serial.write("M114 \n");
-
-        ui->comboBox->setEnabled(false);
-
-        serial.clear();
-
-        if(serial.waitForReadyRead(2000)){
-            QString response = serial.readAll();
-            qDebug()<<"Response: " << response;
-
-            if(response.indexOf("pronto\n") > -1){
-                timer->setInterval(1000);
-                timer->start();
-                ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
-                ui->labelStatus->setText("Conectado");
-                ui->pushButton->setEnabled(true);
-            } else {
-                QMessageBox msgBox;
-                msgBox.setText("O dispositivo respondeu incorretamente.\nTente novamente.");
-                msgBox.exec();
-            }
-        }else{
+        if (!tcpSocket->waitForConnected(5)) {
             QMessageBox msgBox;
-            msgBox.setText("O dispositivo não respondeu (time out).");
+            msgBox.setText("Não foi possível conectar-se ao dispositivo.\nTente novamente.\nErro:" + QString(tcpSocket->error()) + ": " + QString(tcpSocket->errorString()));
             msgBox.exec();
+            ui->labelStatusIcone->setPixmap(QPixmap(":/img/desconectado.png"));
+            ui->labelStatus->setText("Desconectado");
+            return;
         }
 
-        ui->comboBox->setEnabled(true);
-
-//        serial.close();
-    }else{
-        ui->labelStatusIcone->setPixmap(QPixmap(":/img/desconectado.png"));
-        ui->labelStatus->setText("Desconectado");
+        qDebug() << "conectado!";
+        ui->pushButton->setText("Iniciar");
+        ui->labelStatusIcone->setPixmap(QPixmap(":/img/conectado.png"));
+        ui->labelStatus->setText("Conectado");
+    } else if(ui->pushButton->text() == QString("Iniciar")){
+        if(ui->radioArroz->isChecked())
+            tcpSocket->write("iniciar=arroz");
+        else if(ui->radioCafe->isChecked())
+            tcpSocket->write("iniciar=cafe");
+        else if(ui->radioMilho->isChecked())
+            tcpSocket->write("iniciar=milho");
+        ui->tela->zerar();
+        ui->labelCliqueIniciar->setVisible(false);
         ui->pushButton->setEnabled(false);
-        ui->comboBox->setCurrentIndex(0);
-
-        QMessageBox msgBox;
-        if(serial.errorString().indexOf("Permission denied") != -1)
-            msgBox.setText("Você não tem permissão para acessar a porta selecionada.");
-        else if(serial.errorString().indexOf("busy") != -1)
-            msgBox.setText("O dispositivo está ocupado.");
-        else if(serial.errorString().indexOf("Device is not open") != -1)
-            msgBox.setText("O dispositivo não está aberto.");
-        else
-            msgBox.setText("Ocorreu um erro ao conectar-se à porta: \n\n" + serial.errorString());
-        msgBox.exec();
+        ui->labelStatusIcone->setPixmap(QPixmap(":/img/ventilador.png"));
+        ui->labelStatus->setText("Secando");
     }
 }
 

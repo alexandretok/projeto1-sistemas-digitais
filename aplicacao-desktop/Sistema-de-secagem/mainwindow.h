@@ -3,11 +3,10 @@
 
 #include <QMainWindow>
 #include <QDebug>
-#include <QtSerialPort/QSerialPort>
-#include <QtSerialPort/QSerialPortInfo>
+#include <QTcpSocket>
+#include <QDataStream>
 #include <QMessageBox>
 #include <QApplication>
-#include <QTimer>
 #include <tela.h>
 
 namespace Ui {
@@ -24,16 +23,15 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-    void receberComando();
-    void on_comboBox_currentIndexChanged(const QString &arg1);
+    void ler();
     void on_radioArroz_toggled(bool checked);
     void on_radioCafe_toggled(bool checked);
     void on_radioMilho_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
-    QSerialPort serial;
-    QTimer *timer;
+    QTcpSocket *tcpSocket;
+    QDataStream stream;
 };
 
 #endif // MAINWINDOW_H
