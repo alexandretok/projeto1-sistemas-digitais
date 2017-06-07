@@ -1,0 +1,248 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 344 336 512 352)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "IN_BOTAO" (rect 5 0 59 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 48 440 216 456)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "CLK_50M" (rect 5 0 52 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 336 536 520 552)
+	(text "INPUT" (rect 141 0 169 10)(font "Arial" (font_size 6)))
+	(text "IN_SENSOR[3..0]" (rect 5 0 94 12)(font "Arial" ))
+	(pt 184 8)
+	(drawing
+		(line (pt 100 12)(pt 125 12))
+		(line (pt 100 4)(pt 125 4))
+		(line (pt 129 8)(pt 184 8))
+		(line (pt 100 12)(pt 100 4))
+		(line (pt 125 4)(pt 129 8))
+		(line (pt 125 12)(pt 129 8))
+	)
+	(text "VCC" (rect 144 7 164 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1112 408 1288 424)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "PWM_MOTOR" (rect 90 0 160 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1112 472 1288 488)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "PWM_LED" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 560 496 776 592)
+	(text "alfa" (rect 5 0 26 14)(font "Arial" (font_size 8)))
+	(text "inst13" (rect 8 80 37 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_SENSOR[3..0]" (rect 0 0 95 14)(font "Arial" (font_size 8)))
+		(text "IN_SENSOR[3..0]" (rect 21 27 116 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CLK" (rect 0 0 23 14)(font "Arial" (font_size 8)))
+		(text "CLK" (rect 21 43 44 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "ALFA[31..0]" (rect 0 0 68 14)(font "Arial" (font_size 8)))
+		(text "ALFA[31..0]" (rect 127 27 195 41)(font "Arial" (font_size 8)))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 80))
+	)
+)
+(symbol
+	(rect 232 416 384 512)
+	(text "divisor_clock" (rect 5 0 79 14)(font "Arial" (font_size 8)))
+	(text "inst11" (rect 8 80 37 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_50M" (rect 0 0 54 14)(font "Arial" (font_size 8)))
+		(text "CLK_50M" (rect 21 27 75 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "CLK_1K" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "CLK_1K" (rect 85 27 131 41)(font "Arial" (font_size 8)))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 80))
+	)
+)
+(symbol
+	(rect 560 312 800 408)
+	(text "contador_180s" (rect 5 0 91 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_BOTAO" (rect 0 0 61 14)(font "Arial" (font_size 8)))
+		(text "IN_BOTAO" (rect 21 27 82 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CLK_1K" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "CLK_1K" (rect 21 43 67 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "TEMPO_EM_SEG[7..0]" (rect 0 0 123 14)(font "Arial" (font_size 8)))
+		(text "TEMPO_EM_SEG[7..0]" (rect 96 27 219 41)(font "Arial" (font_size 8)))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "SYS_EN" (rect 0 0 48 14)(font "Arial" (font_size 8)))
+		(text "SYS_EN" (rect 171 43 219 57)(font "Arial" (font_size 8)))
+		(line (pt 240 48)(pt 224 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 80))
+	)
+)
+(connector
+	(pt 456 448)
+	(pt 384 448)
+)
+(connector
+	(pt 216 448)
+	(pt 232 448)
+)
+(connector
+	(pt 544 472)
+	(pt 456 472)
+)
+(connector
+	(pt 544 424)
+	(pt 456 424)
+)
+(connector
+	(pt 456 424)
+	(pt 456 448)
+)
+(connector
+	(pt 456 448)
+	(pt 456 472)
+)
+(connector
+	(pt 544 360)
+	(pt 560 360)
+)
+(connector
+	(pt 544 424)
+	(pt 544 360)
+)
+(connector
+	(pt 512 344)
+	(pt 560 344)
+)
+(connector
+	(pt 544 472)
+	(pt 544 544)
+)
+(connector
+	(pt 544 544)
+	(pt 560 544)
+)
+(connector
+	(pt 520 544)
+	(pt 528 544)
+	(bus)
+)
+(connector
+	(pt 528 544)
+	(pt 528 528)
+	(bus)
+)
+(connector
+	(pt 528 528)
+	(pt 560 528)
+	(bus)
+)
+(junction (pt 456 448))
