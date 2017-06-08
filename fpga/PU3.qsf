@@ -52,3 +52,18 @@ set_global_assignment -name BDF_FILE alfa.bdf
 set_global_assignment -name BDF_FILE contador_180.bdf
 set_global_assignment -name BDF_FILE main.bdf
 set_global_assignment -name BDF_FILE curva.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name QIP_FILE lpm_divide0.qip
+set_global_assignment -name QIP_FILE altfp_convert0.qip
+set_global_assignment -name QIP_FILE lpm_constant1.qip
+set_global_assignment -name QIP_FILE lpm_constant2.qip
+set_global_assignment -name QIP_FILE altfp_mult0.qip
+set_global_assignment -name QIP_FILE altfp_add_sub0.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

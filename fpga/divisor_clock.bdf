@@ -54,7 +54,7 @@ applicable agreement for further details.
 (symbol
 	(rect 176 64 320 144)
 	(text "lpm_counter0" (rect 34 0 126 16)(font "Arial" (font_size 10)))
-	(text "inst" (rect 8 64 25 76)(font "Arial" ))
+	(text "inst2" (rect 8 64 31 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -90,8 +90,8 @@ applicable agreement for further details.
 )
 (symbol
 	(rect 336 72 464 168)
-	(text "lpm_compare2" (rect 22 0 122 16)(font "Arial" (font_size 10)))
-	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
+	(text "lpm_compare0" (rect 22 0 122 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
 		(pt 0 48)
 		(input)

@@ -68,35 +68,6 @@ applicable agreement for further details.
 	(text "VCC" (rect 144 7 164 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 536 248 752 344)
-	(text "alfa" (rect 5 0 26 14)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 80 25 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN_SENSOR[9..0]" (rect 0 0 95 14)(font "Arial" (font_size 8)))
-		(text "IN_SENSOR[9..0]" (rect 21 27 116 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "CLK" (rect 0 0 23 14)(font "Arial" (font_size 8)))
-		(text "CLK" (rect 21 43 44 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "ALFA[31..0]" (rect 0 0 68 14)(font "Arial" (font_size 8)))
-		(text "ALFA[31..0]" (rect 127 27 195 41)(font "Arial" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 80))
-	)
-)
-(symbol
 	(rect 208 160 360 256)
 	(text "divisor_clock" (rect 5 0 79 14)(font "Arial" (font_size 8)))
 	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
@@ -152,6 +123,35 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 232 80))
+	)
+)
+(symbol
+	(rect 536 248 752 344)
+	(text "alfa" (rect 5 0 26 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_SENSOR[9..0]" (rect 0 0 95 14)(font "Arial" (font_size 8)))
+		(text "IN_SENSOR[9..0]" (rect 21 27 116 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CLK" (rect 0 0 23 14)(font "Arial" (font_size 8)))
+		(text "CLK" (rect 21 43 44 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "ALFA[31..0]" (rect 0 0 68 14)(font "Arial" (font_size 8)))
+		(text "ALFA[31..0]" (rect 127 27 195 41)(font "Arial" (font_size 8)))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 80))
 	)
 )
 (connector
