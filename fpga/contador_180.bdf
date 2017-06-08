@@ -430,10 +430,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 192 112)
-	(pt 200 112)
-)
-(connector
 	(pt 200 112)
 	(pt 232 112)
 )
@@ -442,15 +438,9 @@ applicable agreement for further details.
 	(pt 256 112)
 )
 (connector
-	(pt 184 216)
-	(pt 200 216)
-)
-(connector
 	(pt 200 216)
 	(pt 360 216)
 )
 (junction (pt 552 320))
 (junction (pt 232 112))
 (junction (pt 528 248))
-(junction (pt 200 112))
-(junction (pt 200 216))
