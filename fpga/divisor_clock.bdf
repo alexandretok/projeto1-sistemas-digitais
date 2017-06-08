@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 56 112 224 128)
+	(rect 0 88 168 104)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "CLK_50M" (rect 5 0 52 12)(font "Arial" ))
 	(pt 168 8)
@@ -37,7 +37,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 528 144 704 160)
+	(rect 504 120 680 136)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CLK_1K" (rect 90 0 130 12)(font "Arial" ))
 	(pt 0 8)
@@ -52,7 +52,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 232 88 376 168)
+	(rect 176 64 320 144)
 	(text "lpm_counter0" (rect 34 0 126 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 64 25 76)(font "Arial" ))
 	(port
@@ -89,9 +89,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 392 96 520 192)
-	(text "lpm_compare0" (rect 22 0 122 16)(font "Arial" (font_size 10)))
-	(text "inst2" (rect 8 80 31 92)(font "Arial" ))
+	(rect 336 72 464 168)
+	(text "lpm_compare2" (rect 22 0 122 16)(font "Arial" (font_size 10)))
+	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
 	(port
 		(pt 0 48)
 		(input)
@@ -124,22 +124,16 @@ applicable agreement for further details.
 	)
 )
 (connector
-	(pt 376 144)
-	(pt 392 144)
+	(pt 168 96)
+	(pt 176 96)
+)
+(connector
+	(pt 320 120)
+	(pt 336 120)
 	(bus)
 )
 (connector
-	(text "CLK_1K" (rect 322 128 362 140)(font "Arial" ))
-	(pt 520 152)
-	(pt 528 152)
+	(pt 464 128)
+	(pt 504 128)
 )
-(connector
-	(pt 224 120)
-	(pt 232 120)
-)
-(connector
-	(pt 232 120)
-	(pt 240 120)
-)
-(junction (pt 232 120))
-(text "Divide o clock por 50000" (rect 320 48 459 62)(font "Arial" (font_size 8)))
+(text "Divide o clock por 50000" (rect 264 24 403 38)(font "Arial" (font_size 8)))
