@@ -44,6 +44,7 @@ ENTITY lpm_counter1 IS
 	(
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
+		sclr		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (17 DOWNTO 0)
 	);
 END lpm_counter1;
@@ -66,7 +67,8 @@ ARCHITECTURE SYN OF lpm_counter1 IS
 	PORT (
 			clock	: IN STD_LOGIC ;
 			cnt_en	: IN STD_LOGIC ;
-			q	: OUT STD_LOGIC_VECTOR (17 DOWNTO 0)
+			q	: OUT STD_LOGIC_VECTOR (17 DOWNTO 0);
+			sclr	: IN STD_LOGIC 
 	);
 	END COMPONENT;
 
@@ -84,6 +86,7 @@ BEGIN
 	PORT MAP (
 		clock => clock,
 		cnt_en => cnt_en,
+		sclr => sclr,
 		q => sub_wire0
 	);
 
@@ -106,7 +109,7 @@ END SYN;
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: ModulusCounter NUMERIC "1"
 -- Retrieval info: PRIVATE: ModulusValue NUMERIC "8"
--- Retrieval info: PRIVATE: SCLR NUMERIC "0"
+-- Retrieval info: PRIVATE: SCLR NUMERIC "1"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
@@ -122,8 +125,10 @@ END SYN;
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 -- Retrieval info: USED_PORT: cnt_en 0 0 0 0 INPUT NODEFVAL "cnt_en"
 -- Retrieval info: USED_PORT: q 0 0 18 0 OUTPUT NODEFVAL "q[17..0]"
+-- Retrieval info: USED_PORT: sclr 0 0 0 0 INPUT NODEFVAL "sclr"
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
+-- Retrieval info: CONNECT: @sclr 0 0 0 0 sclr 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 18 0 @q 0 0 18 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter1.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter1.inc FALSE

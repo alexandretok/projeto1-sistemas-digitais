@@ -478,7 +478,7 @@ GND*                         : K21       :        :                   :         
 GND*                         : K22       :        :                   :         : 5         :                
 GND*                         : K23       :        :                   :         : 5         :                
 GND*                         : K24       :        :                   :         : 5         :                
-TEMPO_EM_SEG[13]             : K25       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[16]             : K25       : output : 3.3-V LVTTL       :         : 5         : N              
 TEMPO_EM_SEG[15]             : K26       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
 GND*                         : L2        :        :                   :         : 2         :                
@@ -498,7 +498,7 @@ GND                          : L15       : gnd    :                   :         
 VCCINT                       : L16       : power  :                   : 1.2V    :           :                
 VCCINT                       : L17       : power  :                   : 1.2V    :           :                
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
-GND*                         : L19       :        :                   :         : 5         :                
+TEMPO_EM_SEG[11]             : L19       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : L20       :        :                   :         : 5         :                
 GND*                         : L21       :        :                   :         : 5         :                
 GND                          : L22       : gnd    :                   :         :           :                
@@ -524,12 +524,12 @@ GND                          : M15       : gnd    :                   :         
 VCCINT                       : M16       : power  :                   : 1.2V    :           :                
 VCCINT                       : M17       : power  :                   : 1.2V    :           :                
 VCCIO5                       : M18       : power  :                   : 3.3V    : 5         :                
-CT_EN                        : M19       : output : 3.3-V LVTTL       :         : 5         : N              
-TEMPO_EM_SEG[2]              : M20       : output : 3.3-V LVTTL       :         : 5         : N              
-TEMPO_EM_SEG[3]              : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[2]              : M19       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[3]              : M20       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[1]              : M21       : output : 3.3-V LVTTL       :         : 5         : N              
 TEMPO_EM_SEG[9]              : M22       : output : 3.3-V LVTTL       :         : 5         : N              
-TEMPO_EM_SEG[16]             : M23       : output : 3.3-V LVTTL       :         : 5         : N              
-TEMPO_EM_SEG[6]              : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[10]             : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[7]              : M24       : output : 3.3-V LVTTL       :         : 5         : N              
 TEMPO_EM_SEG[8]              : M25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : M26       : gnd    :                   :         :           :                
 GND+                         : N1        :        :                   :         : 2         :                
@@ -551,11 +551,11 @@ GND                          : N16       : gnd    :                   :         
 VCCINT                       : N17       : power  :                   : 1.2V    :           :                
 GND*                         : N18       :        :                   :         : 5         :                
 GND                          : N19       : gnd    :                   :         :           :                
-TEMPO_EM_SEG[4]              : N20       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[0]              : N20       : output : 3.3-V LVTTL       :         : 5         : N              
 NC                           : N21       :        :                   :         :           :                
 VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
-TEMPO_EM_SEG[5]              : N23       : output : 3.3-V LVTTL       :         : 5         : N              
-TEMPO_EM_SEG[7]              : N24       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[6]              : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+TEMPO_EM_SEG[5]              : N24       : output : 3.3-V LVTTL       :         : 5         : N              
 CLK_1K                       : N25       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND+                         : N26       :        :                   :         : 5         :                
 GND+                         : P1        :        :                   :         : 1         :                
@@ -574,14 +574,14 @@ GND                          : P13       : gnd    :                   :         
 GND                          : P14       : gnd    :                   :         :           :                
 GND                          : P15       : gnd    :                   :         :           :                
 GND                          : P16       : gnd    :                   :         :           :                
-TEMPO_EM_SEG[12]             : P17       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : P17       :        :                   :         : 6         :                
 GND*                         : P18       :        :                   :         : 5         :                
 GND                          : P19       : gnd    :                   :         :           :                
 MSEL0                        : P20       :        :                   :         : 6         :                
 MSEL1                        : P21       :        :                   :         : 6         :                
 VCCIO6                       : P22       : power  :                   : 3.3V    : 6         :                
-SYS_EN                       : P23       : output : 3.3-V LVTTL       :         : 6         : N              
-FF_CLK                       : P24       : output : 3.3-V LVTTL       :         : 6         : N              
+CT_EN                        : P23       : output : 3.3-V LVTTL       :         : 6         : N              
+SYS_EN                       : P24       : output : 3.3-V LVTTL       :         : 6         : N              
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
@@ -600,15 +600,15 @@ GND                          : R13       : gnd    :                   :         
 GND                          : R14       : gnd    :                   :         :           :                
 GND                          : R15       : gnd    :                   :         :           :                
 VCCINT                       : R16       : power  :                   : 1.2V    :           :                
-TEMPO_EM_SEG[10]             : R17       : output : 3.3-V LVTTL       :         : 6         : N              
+GND*                         : R17       :        :                   :         : 6         :                
 VCCIO6                       : R18       : power  :                   : 3.3V    : 6         :                
 GND*                         : R19       :        :                   :         : 6         :                
-TEMPO_EM_SEG[14]             : R20       : output : 3.3-V LVTTL       :         : 6         : N              
+TEMPO_EM_SEG[17]             : R20       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R21       : gnd    :                   :         :           :                
 nSTATUS                      : R22       :        :                   :         : 6         :                
 CONF_DONE                    : R23       :        :                   :         : 6         :                
-TEMPO_EM_SEG[0]              : R24       : output : 3.3-V LVTTL       :         : 6         : N              
-TEMPO_EM_SEG[1]              : R25       : output : 3.3-V LVTTL       :         : 6         : N              
+OUT_COMP                     : R24       : output : 3.3-V LVTTL       :         : 6         : N              
+FF_CLK                       : R25       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 GND*                         : T2        :        :                   :         : 1         :                
@@ -631,10 +631,10 @@ GND*                         : T18       :        :                   :         
 GND*                         : T19       :        :                   :         : 6         :                
 GND*                         : T20       :        :                   :         : 6         :                
 GND*                         : T21       :        :                   :         : 6         :                
-TEMPO_EM_SEG[17]             : T22       : output : 3.3-V LVTTL       :         : 6         : N              
-OUT_COMP                     : T23       : output : 3.3-V LVTTL       :         : 6         : N              
-GND*                         : T24       :        :                   :         : 6         :                
-TEMPO_EM_SEG[11]             : T25       : output : 3.3-V LVTTL       :         : 6         : N              
+TEMPO_EM_SEG[13]             : T22       : output : 3.3-V LVTTL       :         : 6         : N              
+TEMPO_EM_SEG[4]              : T23       : output : 3.3-V LVTTL       :         : 6         : N              
+TEMPO_EM_SEG[12]             : T24       : output : 3.3-V LVTTL       :         : 6         : N              
+TEMPO_EM_SEG[14]             : T25       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
 GND*                         : U1        :        :                   :         : 1         :                
 GND*                         : U2        :        :                   :         : 1         :                
