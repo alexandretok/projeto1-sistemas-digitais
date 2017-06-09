@@ -139,28 +139,6 @@ applicable agreement for further details.
 	(annotation_block (location)(rect 1048 96 1112 112))
 )
 (symbol
-	(rect 208 160 360 256)
-	(text "divisor_clock" (rect 5 0 79 14)(font "Arial" (font_size 8)))
-	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "CLK_50M" (rect 0 0 54 14)(font "Arial" (font_size 8)))
-		(text "CLK_50M" (rect 21 27 75 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "CLK_1K" (rect 0 0 46 14)(font "Arial" (font_size 8)))
-		(text "CLK_1K" (rect 85 27 131 41)(font "Arial" (font_size 8)))
-		(line (pt 152 32)(pt 136 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 136 80))
-	)
-)
-(symbol
 	(rect 536 256 752 352)
 	(text "alfa" (rect 5 0 26 14)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
@@ -187,6 +165,28 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 200 80))
+	)
+)
+(symbol
+	(rect 208 160 360 256)
+	(text "divisor_clock" (rect 5 0 79 14)(font "Arial" (font_size 8)))
+	(text "inst1" (rect 8 80 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_50M" (rect 0 0 54 14)(font "Arial" (font_size 8)))
+		(text "CLK_50M" (rect 21 27 75 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "CLK_1K" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "CLK_1K" (rect 85 27 131 41)(font "Arial" (font_size 8)))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 80))
 	)
 )
 (symbol
@@ -221,6 +221,13 @@ applicable agreement for further details.
 		(text "SYS_EN" (rect 179 43 227 57)(font "Arial" (font_size 8)))
 		(line (pt 248 48)(pt 232 48))
 	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "1K" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "1K" (rect 212 59 227 73)(font "Arial" (font_size 8)))
+		(line (pt 248 64)(pt 232 64))
+	)
 	(drawing
 		(rectangle (rect 16 16 232 80))
 	)
@@ -236,10 +243,6 @@ applicable agreement for further details.
 (connector
 	(pt 520 216)
 	(pt 432 216)
-)
-(connector
-	(pt 520 168)
-	(pt 432 168)
 )
 (connector
 	(pt 520 104)
@@ -291,4 +294,21 @@ applicable agreement for further details.
 	(pt 840 128)
 	(pt 848 128)
 )
+(connector
+	(pt 568 216)
+	(pt 856 216)
+)
+(connector
+	(pt 568 216)
+	(pt 568 168)
+)
+(connector
+	(pt 432 168)
+	(pt 520 168)
+)
+(connector
+	(pt 520 168)
+	(pt 568 168)
+)
 (junction (pt 432 192))
+(junction (pt 520 168))

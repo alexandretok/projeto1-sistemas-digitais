@@ -3,27 +3,27 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'CLK_50M'
-Slack : -4.345
-TNS   : -52.223
+Slack : -4.040
+TNS   : -51.064
 
 Type  : Slow Model Setup 'divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[10]'
-Slack : -3.550
-TNS   : -59.868
+Slack : -3.549
+TNS   : -59.949
 
 Type  : Slow Model Setup 'IN_BOTAO'
-Slack : 0.262
+Slack : 0.265
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLK_50M'
-Slack : -2.856
-TNS   : -25.148
+Slack : -2.557
+TNS   : -21.617
 
 Type  : Slow Model Hold 'divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[10]'
-Slack : -0.754
-TNS   : -11.007
+Slack : -0.207
+TNS   : -2.772
 
 Type  : Slow Model Hold 'IN_BOTAO'
-Slack : 0.008
+Slack : 0.005
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLK_50M'
@@ -39,28 +39,28 @@ Slack : -0.500
 TNS   : -18.000
 
 Type  : Fast Model Setup 'CLK_50M'
-Slack : -1.367
-TNS   : -15.562
+Slack : -1.223
+TNS   : -15.038
 
 Type  : Fast Model Setup 'divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[10]'
-Slack : -1.153
-TNS   : -19.008
+Slack : -1.152
+TNS   : -19.053
 
 Type  : Fast Model Setup 'IN_BOTAO'
-Slack : 0.489
+Slack : 0.474
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLK_50M'
-Slack : -1.672
-TNS   : -17.246
-
-Type  : Fast Model Hold 'divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[10]'
-Slack : -0.248
-TNS   : -3.294
+Slack : -1.536
+TNS   : -15.636
 
 Type  : Fast Model Hold 'IN_BOTAO'
-Slack : -0.109
-TNS   : -0.109
+Slack : -0.094
+TNS   : -0.094
+
+Type  : Fast Model Hold 'divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[10]'
+Slack : -0.018
+TNS   : -0.162
 
 Type  : Fast Model Minimum Pulse Width 'CLK_50M'
 Slack : -1.380

@@ -1,6 +1,6 @@
 Fitter report for PU3
-Thu Jun 08 16:50:52 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Fri Jun 09 02:42:33 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -9,36 +9,35 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   1. Legal Notice
   2. Fitter Summary
   3. Fitter Settings
-  4. Parallel Compilation
-  5. Incremental Compilation Preservation Summary
-  6. Incremental Compilation Partition Settings
-  7. Incremental Compilation Placement Preservation
-  8. Pin-Out File
-  9. Fitter Resource Usage Summary
- 10. Fitter Partition Statistics
- 11. Input Pins
- 12. Output Pins
- 13. I/O Bank Usage
- 14. All Package Pins
- 15. Output Pin Default Load For Reported TCO
- 16. Fitter Resource Utilization by Entity
- 17. Delay Chain Summary
- 18. Pad To Core Delay Chain Fanout
- 19. Control Signals
- 20. Global & Other Fast Signals
- 21. Non-Global High Fan-Out Signals
- 22. Other Routing Usage Summary
- 23. LAB Logic Elements
- 24. LAB-wide Signals
- 25. LAB Signals Sourced
- 26. LAB Signals Sourced Out
- 27. LAB Distinct Inputs
- 28. Fitter Device Options
- 29. Operating Settings and Conditions
- 30. Estimated Delay Added for Hold Timing Summary
- 31. Estimated Delay Added for Hold Timing Details
- 32. Fitter Messages
- 33. Fitter Suppressed Messages
+  4. Incremental Compilation Preservation Summary
+  5. Incremental Compilation Partition Settings
+  6. Incremental Compilation Placement Preservation
+  7. Pin-Out File
+  8. Fitter Resource Usage Summary
+  9. Fitter Partition Statistics
+ 10. Input Pins
+ 11. Output Pins
+ 12. I/O Bank Usage
+ 13. All Package Pins
+ 14. Output Pin Default Load For Reported TCO
+ 15. Fitter Resource Utilization by Entity
+ 16. Delay Chain Summary
+ 17. Pad To Core Delay Chain Fanout
+ 18. Control Signals
+ 19. Global & Other Fast Signals
+ 20. Non-Global High Fan-Out Signals
+ 21. Other Routing Usage Summary
+ 22. LAB Logic Elements
+ 23. LAB-wide Signals
+ 24. LAB Signals Sourced
+ 25. LAB Signals Sourced Out
+ 26. LAB Distinct Inputs
+ 27. Fitter Device Options
+ 28. Operating Settings and Conditions
+ 29. Estimated Delay Added for Hold Timing Summary
+ 30. Estimated Delay Added for Hold Timing Details
+ 31. Fitter Messages
+ 32. Fitter Suppressed Messages
 
 
 
@@ -61,26 +60,26 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Fitter Summary                                                                  ;
-+------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jun 08 16:50:52 2017      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; PU3                                        ;
-; Top-level Entity Name              ; main                                       ;
-; Family                             ; Cyclone II                                 ;
-; Device                             ; EP2C35F672C6                               ;
-; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 186 / 33,216 ( < 1 % )                     ;
-;     Total combinational functions  ; 185 / 33,216 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 35 / 33,216 ( < 1 % )                      ;
-; Total registers                    ; 35                                         ;
-; Total pins                         ; 33 / 475 ( 7 % )                           ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
-+------------------------------------+--------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Fitter Summary                                                                        ;
++------------------------------------+--------------------------------------------------+
+; Fitter Status                      ; Successful - Fri Jun 09 02:42:33 2017            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; PU3                                              ;
+; Top-level Entity Name              ; main                                             ;
+; Family                             ; Cyclone II                                       ;
+; Device                             ; EP2C35F672C6                                     ;
+; Timing Models                      ; Final                                            ;
+; Total logic elements               ; 186 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 185 / 33,216 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 35 / 33,216 ( < 1 % )                            ;
+; Total registers                    ; 35                                               ;
+; Total pins                         ; 33 / 475 ( 7 % )                                 ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                              ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                   ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                    ;
++------------------------------------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,17 +133,6 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------------------+--------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
-
-
 +----------------------------------------------+
 ; Incremental Compilation Preservation Summary ;
 +---------------------+------------------------+
@@ -183,7 +171,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/fpga/output_files/PU3.pin.
+The pin-out file can be found in C:/Users/Alexandre/Desktop/digital-systems/fpga/output_files/PU3.pin.
 
 
 +----------------------------------------------------------------------+
@@ -226,10 +214,10 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 1%           ;
+; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%           ;
 ; Maximum fan-out                             ; 34                     ;
 ; Highest non-global fan-out                  ; 34                     ;
-; Total fan-out                               ; 613                    ;
+; Total fan-out                               ; 614                    ;
 ; Average fan-out                             ; 2.38                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -277,7 +265,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 613                   ; 0                              ;
+;     -- Total Connections                    ; 614                   ; 0                              ;
 ;     -- Registered Connections               ; 123                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
@@ -338,19 +326,19 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; OUT_TEMPO[12] ; J13   ; 3        ; 24           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; OUT_TEMPO[13] ; AC9   ; 8        ; 20           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; OUT_TEMPO[14] ; D21   ; 4        ; 63           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[15] ; L21   ; 5        ; 65           ; 24           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[16] ; AC25  ; 6        ; 65           ; 6            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[15] ; AE21  ; 7        ; 55           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[16] ; V18   ; 7        ; 59           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; OUT_TEMPO[17] ; C12   ; 3        ; 29           ; 36           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[1]  ; G24   ; 5        ; 65           ; 28           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[2]  ; K22   ; 5        ; 65           ; 28           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[3]  ; F25   ; 5        ; 65           ; 29           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[4]  ; P18   ; 5        ; 65           ; 29           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[5]  ; N18   ; 5        ; 65           ; 29           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[6]  ; H24   ; 5        ; 65           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[7]  ; H19   ; 5        ; 65           ; 26           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; OUT_TEMPO[8]  ; J24   ; 5        ; 65           ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[1]  ; G23   ; 5        ; 65           ; 28           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[2]  ; H24   ; 5        ; 65           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[3]  ; G25   ; 5        ; 65           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[4]  ; H23   ; 5        ; 65           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[5]  ; J24   ; 5        ; 65           ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[6]  ; H25   ; 5        ; 65           ; 26           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[7]  ; J23   ; 5        ; 65           ; 26           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; OUT_TEMPO[8]  ; H19   ; 5        ; 65           ; 26           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; OUT_TEMPO[9]  ; W23   ; 6        ; 65           ; 9            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; PWM_COOLER    ; D8    ; 3        ; 14           ; 36           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; PWM_COOLER    ; K18   ; 5        ; 65           ; 25           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -361,11 +349,11 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 +----------+------------------+---------------+--------------+
 ; 1        ; 0 / 64 ( 0 % )   ; 3.3V          ; --           ;
 ; 2        ; 5 / 59 ( 8 % )   ; 3.3V          ; --           ;
-; 3        ; 5 / 56 ( 9 % )   ; 3.3V          ; --           ;
+; 3        ; 4 / 56 ( 7 % )   ; 3.3V          ; --           ;
 ; 4        ; 3 / 58 ( 5 % )   ; 3.3V          ; --           ;
 ; 5        ; 13 / 65 ( 20 % ) ; 3.3V          ; --           ;
-; 6        ; 4 / 59 ( 7 % )   ; 3.3V          ; --           ;
-; 7        ; 2 / 58 ( 3 % )   ; 3.3V          ; --           ;
+; 6        ; 3 / 59 ( 5 % )   ; 3.3V          ; --           ;
+; 7        ; 4 / 58 ( 7 % )   ; 3.3V          ; --           ;
 ; 8        ; 4 / 56 ( 7 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -475,7 +463,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; AC22     ; 241        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC23     ; 245        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC24     ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; AC25     ; 260        ; 6        ; OUT_TEMPO[16]                            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AC25     ; 260        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AC26     ; 261        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; AD1      ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AD2      ; 122        ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -523,7 +511,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; AE18     ; 212        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE19     ; 214        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE20     ; 224        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE21     ; 228        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AE21     ; 228        ; 7        ; OUT_TEMPO[15]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE22     ; 236        ; 7        ; LED_SYS_EN                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AE23     ; 244        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE24     ; 247        ; 6        ; ~LVDS150p/nCEO~                          ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
@@ -612,7 +600,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; D5       ; 477        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D6       ; 467        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D7       ; 469        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; D8       ; 464        ; 3        ; PWM_COOLER                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D8       ; 464        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D9       ; 460        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D10      ; 449        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D11      ; 445        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -681,7 +669,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; F22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; F23      ; 353        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F24      ; 354        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F25      ; 350        ; 5        ; OUT_TEMPO[3]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F25      ; 350        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F26      ; 349        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G1       ; 30         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G2       ; 31         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -705,9 +693,9 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; G20      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; G21      ; 368        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G22      ; 367        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G23      ; 346        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G24      ; 345        ; 5        ; OUT_TEMPO[1]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; G25      ; 343        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G23      ; 346        ; 5        ; OUT_TEMPO[1]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G24      ; 345        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G25      ; 343        ; 5        ; OUT_TEMPO[3]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G26      ; 342        ; 5        ; IN_BOTAO                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H1       ; 37         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H2       ; 36         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -727,13 +715,13 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; H16      ; 413        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H17      ; 400        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H18      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; H19      ; 335        ; 5        ; OUT_TEMPO[7]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H19      ; 335        ; 5        ; OUT_TEMPO[8]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H20      ;            ;          ; VCCD_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; H21      ; 366        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; H23      ; 341        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H24      ; 340        ; 5        ; OUT_TEMPO[6]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; H25      ; 337        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H23      ; 341        ; 5        ; OUT_TEMPO[4]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H24      ; 340        ; 5        ; OUT_TEMPO[2]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H25      ; 337        ; 5        ; OUT_TEMPO[6]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H26      ; 336        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J1       ; 39         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J2       ; 38         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -757,8 +745,8 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; J20      ; 351        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J21      ; 352        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; OUT_TEMPO[0]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J23      ; 339        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J24      ; 338        ; 5        ; OUT_TEMPO[8]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J23      ; 339        ; 5        ; OUT_TEMPO[7]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J24      ; 338        ; 5        ; OUT_TEMPO[5]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J25      ; 327        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J26      ; 326        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K1       ; 42         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -778,11 +766,11 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; K15      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; K16      ; 386        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; K17      ; 384        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; K18      ; 334        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; K18      ; 334        ; 5        ; PWM_COOLER                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K19      ; 333        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K20      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; K21      ; 332        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; K22      ; 344        ; 5        ; OUT_TEMPO[2]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K22      ; 344        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K23      ; 331        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K24      ; 330        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K25      ; 321        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -807,7 +795,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; L18      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L19      ; 322        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L20      ; 328        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L21      ; 329        ; 5        ; OUT_TEMPO[15]                            ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L21      ; 329        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L23      ; 325        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; L24      ; 324        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -856,7 +844,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; N15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N16      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N17      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; N18      ; 348        ; 5        ; OUT_TEMPO[5]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N18      ; 348        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N20      ; 315        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N21      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -882,7 +870,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; P15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P16      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P17      ; 293        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P18      ; 347        ; 5        ; OUT_TEMPO[4]                             ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P18      ; 347        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P20      ; 301        ; 6        ; ^MSEL0                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P21      ; 300        ; 6        ; ^MSEL1                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -986,7 +974,7 @@ The pin-out file can be found in E:/fpga/output_files/PU3.pin.
 ; V15      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V16      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; V17      ; 218        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; V18      ; 233        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; V18      ; 233        ; 7        ; OUT_TEMPO[16]                            ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; V19      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; V20      ; 251        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V21      ; 252        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1093,28 +1081,28 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                        ; Library Name ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |main                                        ; 186 (2)     ; 35 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 33   ; 0            ; 151 (2)      ; 1 (0)             ; 34 (0)           ; |main                                                                                                                                                      ;              ;
-;    |contador_180:inst2|                      ; 158 (3)     ; 19 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 139 (2)      ; 1 (1)             ; 18 (0)           ; |main|contador_180:inst2                                                                                                                                   ;              ;
-;       |lpm_compare1:inst8|                   ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8                                                                                                                ;              ;
-;          |lpm_compare:LPM_COMPARE_component| ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component                                                                              ;              ;
-;             |cmpr_59j:auto_generated|        ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component|cmpr_59j:auto_generated                                                      ;              ;
-;       |lpm_counter1:inst7|                   ; 25 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 18 (0)           ; |main|contador_180:inst2|lpm_counter1:inst7                                                                                                                ;              ;
-;          |lpm_counter:LPM_COUNTER_component| ; 25 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 18 (0)           ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component                                                                              ;              ;
-;             |cntr_rsj:auto_generated|        ; 25 (20)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 18 (18)          ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated                                                      ;              ;
-;                |cmpr_tdc:cmpr2|              ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2                                       ;              ;
-;       |lpm_divide0:inst9|                    ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9                                                                                                                 ;              ;
-;          |lpm_divide:LPM_DIVIDE_component|   ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component                                                                                 ;              ;
-;             |lpm_divide_eup:auto_generated|  ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated                                                   ;              ;
-;                |sign_div_unsign_9nh:divider| ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
-;                   |alt_u_div_k5f:divider|    ; 128 (128)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (128)    ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
-;    |divisor_clock:inst1|                     ; 26 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1                                                                                                                                  ;              ;
-;       |lpm_compare0:inst|                    ; 3 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst                                                                                                                ;              ;
-;          |lpm_compare:LPM_COMPARE_component| ; 3 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component                                                                              ;              ;
-;             |cmpr_a9j:auto_generated|        ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated                                                      ;              ;
-;       |lpm_counter0:inst2|                   ; 23 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1|lpm_counter0:inst2                                                                                                               ;              ;
-;          |lpm_counter:LPM_COUNTER_component| ; 23 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component                                                                             ;              ;
-;             |cntr_e6j:auto_generated|        ; 23 (18)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 16 (16)          ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated                                                     ;              ;
-;                |cmpr_rdc:cmpr2|              ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2                                      ;              ;
+; |main                                        ; 186 (2)     ; 35 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 33   ; 0            ; 151 (2)      ; 1 (0)             ; 34 (0)           ; |main                                                                                                                                                      ; work         ;
+;    |contador_180:inst2|                      ; 158 (3)     ; 19 (1)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 139 (2)      ; 1 (1)             ; 18 (0)           ; |main|contador_180:inst2                                                                                                                                   ; work         ;
+;       |lpm_compare1:inst8|                   ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8                                                                                                                ; work         ;
+;          |lpm_compare:LPM_COMPARE_component| ; 2 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component                                                                              ; work         ;
+;             |cmpr_59j:auto_generated|        ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component|cmpr_59j:auto_generated                                                      ; work         ;
+;       |lpm_counter1:inst7|                   ; 25 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 18 (0)           ; |main|contador_180:inst2|lpm_counter1:inst7                                                                                                                ; work         ;
+;          |lpm_counter:LPM_COUNTER_component| ; 25 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 18 (0)           ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component                                                                              ; work         ;
+;             |cntr_rsj:auto_generated|        ; 25 (20)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 18 (18)          ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated                                                      ; work         ;
+;                |cmpr_tdc:cmpr2|              ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2                                       ; work         ;
+;       |lpm_divide0:inst9|                    ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9                                                                                                                 ; work         ;
+;          |lpm_divide:LPM_DIVIDE_component|   ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component                                                                                 ; work         ;
+;             |lpm_divide_eup:auto_generated|  ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 128 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (0)      ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;                   |alt_u_div_k5f:divider|    ; 128 (128)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (128)    ; 0 (0)             ; 0 (0)            ; |main|contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ; work         ;
+;    |divisor_clock:inst1|                     ; 26 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1                                                                                                                                  ; work         ;
+;       |lpm_compare0:inst|                    ; 3 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst                                                                                                                ; work         ;
+;          |lpm_compare:LPM_COMPARE_component| ; 3 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component                                                                              ; work         ;
+;             |cmpr_a9j:auto_generated|        ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated                                                      ; work         ;
+;       |lpm_counter0:inst2|                   ; 23 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1|lpm_counter0:inst2                                                                                                               ; work         ;
+;          |lpm_counter:LPM_COUNTER_component| ; 23 (0)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 16 (0)           ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component                                                                             ; work         ;
+;             |cntr_e6j:auto_generated|        ; 23 (18)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (2)        ; 0 (0)             ; 16 (16)          ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated                                                     ; work         ;
+;                |cmpr_rdc:cmpr2|              ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |main|divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2                                      ; work         ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1176,7 +1164,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IN_SENSOR[1]                            ;                   ;         ;
 ; IN_SENSOR[0]                            ;                   ;         ;
 ; IN_BOTAO                                ;                   ;         ;
-;      - contador_180:inst2|inst4         ; 1                 ; 0       ;
+;      - contador_180:inst2|inst4         ; 0                 ; 0       ;
 ;      - contador_180:inst2|inst10        ; 0                 ; 0       ;
 ;      - contador_180:inst2|inst11~feeder ; 0                 ; 0       ;
 ; CLK_50M                                 ;                   ;         ;
@@ -1191,10 +1179,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK_50M                                                                                                      ; PIN_N2             ; 13      ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; CLK_50M                                                                                                      ; PIN_N2             ; 4       ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
 ; contador_180:inst2|inst10                                                                                    ; LCCOMB_X64_Y27_N10 ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; contador_180:inst2|inst4                                                                                     ; LCCOMB_X64_Y27_N8  ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; contador_180:inst2|inst4                                                                                     ; LCCOMB_X64_Y27_N2  ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cout_actual  ; LCCOMB_X64_Y26_N24 ; 18      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cout_actual ; LCCOMB_X64_Y23_N28 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; rtl~0                                                                                                        ; LCCOMB_X64_Y23_N26 ; 18      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cout_actual ; LCCOMB_X64_Y21_N28 ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; rtl~0                                                                                                        ; LCCOMB_X64_Y21_N22 ; 19      ; Clock        ; no     ; --                   ; --               ; --                        ;
 +--------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1213,7 +1201,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                                                                              ; Fan-Out ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; ~GND                                                                                                                                                                              ; 34      ;
-; rtl~0                                                                                                                                                                             ; 18      ;
+; rtl~0                                                                                                                                                                             ; 19      ;
 ; contador_180:inst2|inst4                                                                                                                                                          ; 18      ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cout_actual                                                                       ; 18      ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cout_actual                                                                      ; 16      ;
@@ -1244,6 +1232,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[16]                                                                        ; 4       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[17]                                                                        ; 4       ;
 ; IN_BOTAO                                                                                                                                                                          ; 3       ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[2]                                                                         ; 3       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[15]                                                                       ; 3       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[13]                                                                       ; 3       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[14]                                                                       ; 3       ;
@@ -1254,12 +1243,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[5]                                                                        ; 3       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[3]                                                                        ; 3       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|safe_q[4]                                                                        ; 3       ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[2]                                                                         ; 3       ;
-; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2|aneb_result_wire[0]~0                                             ; 2       ;
 ; contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component|cmpr_59j:auto_generated|aneb_result_wire[0]~1                                                             ; 2       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2|data_wire[6]~2                                                     ; 2       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2|data_wire[6]~1                                                     ; 2       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2|data_wire[6]~0                                                     ; 2       ;
+; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2|aneb_result_wire[0]~0                                             ; 2       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[169]~41             ; 2       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[170]~40             ; 2       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[171]~39             ; 2       ;
@@ -1305,13 +1293,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2|aneb_result_wire[0]~3                                             ; 1       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2|aneb_result_wire[0]~2                                             ; 1       ;
 ; divisor_clock:inst1|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component|cntr_e6j:auto_generated|cmpr_rdc:cmpr2|aneb_result_wire[0]~1                                             ; 1       ;
-; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~2                                                                            ; 1       ;
-; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~1                                                                            ; 1       ;
-; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~0                                                                            ; 1       ;
 ; contador_180:inst2|inst10                                                                                                                                                         ; 1       ;
 ; contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component|cmpr_59j:auto_generated|aneb_result_wire[0]~0                                                             ; 1       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2|data_wire[6]~4                                                     ; 1       ;
 ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|cmpr_tdc:cmpr2|data_wire[6]~3                                                     ; 1       ;
+; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~2                                                                            ; 1       ;
+; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~1                                                                            ; 1       ;
+; divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component|cmpr_a9j:auto_generated|op_1~0                                                                            ; 1       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[180]~47             ; 1       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[181]~46             ; 1       ;
 ; contador_180:inst2|lpm_divide0:inst9|lpm_divide:LPM_DIVIDE_component|lpm_divide_eup:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|StageOut[182]~45             ; 1       ;
@@ -1524,14 +1512,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 131 / 94,460 ( < 1 % ) ;
+; Block interconnects         ; 129 / 94,460 ( < 1 % ) ;
 ; C16 interconnects           ; 0 / 3,315 ( 0 % )      ;
-; C4 interconnects            ; 53 / 60,840 ( < 1 % )  ;
-; Direct links                ; 57 / 94,460 ( < 1 % )  ;
+; C4 interconnects            ; 48 / 60,840 ( < 1 % )  ;
+; Direct links                ; 56 / 94,460 ( < 1 % )  ;
 ; Global clocks               ; 1 / 16 ( 6 % )         ;
 ; Local interconnects         ; 103 / 33,216 ( < 1 % ) ;
 ; R24 interconnects           ; 3 / 3,091 ( < 1 % )    ;
-; R4 interconnects            ; 32 / 81,294 ( < 1 % )  ;
+; R4 interconnects            ; 33 / 81,294 ( < 1 % )  ;
 +-----------------------------+------------------------+
 
 
@@ -1689,24 +1677,24 @@ This will disable optimization of problematic paths and expose them for further 
 ; Source Register                                                                                            ; Destination Register                                                                                      ; Delay Added in ns ;
 +------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------+
 ; IN_BOTAO                                                                                                   ; contador_180:inst2|inst11                                                                                 ; 1.102             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[15] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[16] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[14] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[13] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[12] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[11] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[9]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[8]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[7]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[10] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[4]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[3]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[2]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[1]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[0]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[5]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
-; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[17] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.244             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[15] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[16] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[14] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[13] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[12] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[11] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[9]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[8]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[7]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[10] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[4]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[3]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[2]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[1]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[0]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[5]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6]  ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
+; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[17] ; contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component|cntr_rsj:auto_generated|safe_q[6] ; 0.394             ;
 +------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 19 path(s) that have the largest delay added for hold.
 
@@ -1714,12 +1702,11 @@ Note: This table only shows the top 19 path(s) that have the largest delay added
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (20029): Only one processor detected - disabling parallel compilation
 Info (119006): Selected device EP2C35F672C6 for design "PU3"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
-Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device EP2C50F672C6 is compatible
     Info (176445): Device EP2C70F672C6 is compatible
@@ -1780,7 +1767,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  57 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 3.3V VCCIO pins. 2 total pin(s) used --  56 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  54 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1789,7 +1776,7 @@ Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X55_Y24 to location X65_Y36
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (11888): Total time spent on timing analysis during the Fitter is 0.95 seconds.
@@ -1821,17 +1808,17 @@ Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file E:/fpga/output_files/PU3.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 659 megabytes
-    Info: Processing ended: Thu Jun 08 16:50:55 2017
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:12
+Info (144001): Generated suppressed messages file C:/Users/Alexandre/Desktop/digital-systems/fpga/output_files/PU3.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 661 megabytes
+    Info: Processing ended: Fri Jun 09 02:42:33 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in E:/fpga/output_files/PU3.fit.smsg.
+The suppressed messages can be found in C:/Users/Alexandre/Desktop/digital-systems/fpga/output_files/PU3.fit.smsg.
 
 

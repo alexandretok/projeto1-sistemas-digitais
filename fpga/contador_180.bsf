@@ -51,6 +51,13 @@ applicable agreement for further details.
 		(text "SYS_EN" (rect 179 43 227 57)(font "Arial" (font_size 8)))
 		(line (pt 248 48)(pt 232 48))
 	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "1K" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "1K" (rect 212 59 227 73)(font "Arial" (font_size 8)))
+		(line (pt 248 64)(pt 232 64))
+	)
 	(drawing
 		(rectangle (rect 16 16 232 80))
 	)
