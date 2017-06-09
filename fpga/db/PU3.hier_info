@@ -1,8 +1,8 @@
 |contador_180
 SYS_EN <= inst11.DB_MAX_OUTPUT_PORT_TYPE
-IN_BOTAO => inst6.IN0
-CLK_1K => inst20.IN2
 CLK_1K => lpm_counter1:inst7.clock
+CLK_1K => inst20.IN2
+IN_BOTAO => inst6.IN0
 CT_EN <= inst221.DB_MAX_OUTPUT_PORT_TYPE
 OUT_COMP <= lpm_compare1:inst8.agb
 FF_CLK <= inst20.DB_MAX_OUTPUT_PORT_TYPE

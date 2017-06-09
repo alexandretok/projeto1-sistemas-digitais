@@ -33,6 +33,8 @@ vsim work.contador_180
 # Loading cycloneii.cycloneii_components
 # Loading work.contador_180(structure)
 # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneii.cycloneii_io(structure)
 # Loading cycloneii.cycloneii_mux21(altvital)
@@ -40,8 +42,6 @@ vsim work.contador_180
 # Loading cycloneii.cycloneii_asynch_io(behave)
 # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
 # Loading cycloneii.cycloneii_and1(altvital)
-# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
-# Loading cycloneii.cycloneii_ena_reg(behave)
 # ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
 # This may because you are loading cell libraries which are not recommended with
 # the ModelSim Altera version. Expect performance to be adversely affected.
@@ -50,17 +50,145 @@ add wave -position end  sim:/contador_180/SYS_EN
 # 
 #           File in use by: Alexandre  Hostname: ALEXANDRE-PC  ProcessID: 1652
 # 
-#           Attempting to use alternate WLF file "./wlftj20wjx".
+#           Attempting to use alternate WLF file "./wlftww3z1y".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftj20wjx
+#           Using alternate file: ./wlftww3z1y
 # 
 add wave -position end  sim:/contador_180/CT_EN
 add wave -position end  sim:/contador_180/OUT_COMP
 add wave -position end  sim:/contador_180/FF_CLK
 add wave -position end  sim:/contador_180/TEMPO_EM_SEG
 wave create -driver freeze -pattern clock -initialvalue U -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/contador_180/IN_BOTAO
-wave create -driver freeze -pattern clock -initialvalue U -period 20ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/contador_180/CLK_1K
+wave create -driver freeze -pattern clock -initialvalue U -period 10ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/contador_180/CLK_1K
+# Can't move the Now cursor.
+run
+run
+run
+wave modify -driver freeze -pattern clock -initialvalue 0 -period 100ps -dutycycle 50 -starttime 300ps -endtime 1000ps Edit:/contador_180/IN_BOTAO
+wave modify -driver freeze -pattern constant -value 0 -starttime 300ps -endtime 1000ps Edit:/contador_180/IN_BOTAO
+run
+run
+restart -f
+run
+wave modify -driver freeze -pattern constant -value 0 -starttime 100ps -endtime 1000ps Edit:/contador_180/IN_BOTAO
+run
+run
+run
+wave modify -driver freeze -pattern constant -value 1 -starttime 100ps -endtime 1000ps Edit:/contador_180/IN_BOTAO
+restart -f
+run
+run
+run
+run
+run
+run
+run
+wave modify -driver freeze -pattern clock -initialvalue U -period 50ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/contador_180/CLK_1K
+restart -f
+run
+run
+wave modify -driver freeze -pattern clock -initialvalue U -period 25ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/contador_180/CLK_1K
+restart -f
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /contador_180/CLK_1K "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+restart -f
+run
+run
+run
+run
+run
+restart -f
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# 
+# Internal Error: In tclprim_ApplyStimulus for /contador_180/CLK_1K "Time value must be greater than "now": 1000 ps
+# ** Error: (vsim-4004) The -cancel option requires a time period argument.
+# Usage: force [-deposit | -drive | -freeze] [-cancel <period>] [-repeat <period>] <item_name> <value> [<time>] [, <value> <time> ...]"
+run
+restart -f
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run
