@@ -232,6 +232,35 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 232 80))
 	)
 )
+(symbol
+	(rect 552 400 776 496)
+	(text "pwm" (rect 5 0 33 14)(font "Arial" (font_size 8)))
+	(text "inst3" (rect 8 80 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_1K" (rect 0 0 46 14)(font "Arial" (font_size 8)))
+		(text "CLK_1K" (rect 21 27 67 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "DUTY_CYCLE[6..0]" (rect 0 0 108 14)(font "Arial" (font_size 8)))
+		(text "DUTY_CYCLE[6..0]" (rect 21 43 129 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "OUT_PWM" (rect 0 0 60 14)(font "Arial" (font_size 8)))
+		(text "OUT_PWM" (rect 143 27 203 41)(font "Arial" (font_size 8)))
+		(line (pt 224 32)(pt 208 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 80))
+	)
+)
 (connector
 	(pt 432 192)
 	(pt 360 192)
