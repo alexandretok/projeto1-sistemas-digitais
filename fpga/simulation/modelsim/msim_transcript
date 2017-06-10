@@ -10,7 +10,7 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {PU3_fast.vho}
+# vcom -93 -work work {PU3.vho}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -33,38 +33,28 @@ vsim work.contador_180
 # Loading cycloneii.cycloneii_components
 # Loading work.contador_180(structure)
 # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneii.cycloneii_io(structure)
 # Loading cycloneii.cycloneii_mux21(altvital)
 # Loading cycloneii.cycloneii_dffe(behave)
 # Loading cycloneii.cycloneii_asynch_io(behave)
-# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
-# Loading cycloneii.cycloneii_and1(altvital)
-# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
-# Loading cycloneii.cycloneii_ena_reg(behave)
+do wave.do
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0
 add wave -position end  sim:/contador_180/SYS_EN
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: Alexandre  Hostname: ALEXANDRE-PC  ProcessID: 1652
 # 
-#           Attempting to use alternate WLF file "./wlft8dvnha".
+#           Attempting to use alternate WLF file "./wlft76q00a".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft8dvnha
+#           Using alternate file: ./wlft76q00a
 # 
-add wave -position end  sim:/contador_180/CT_EN
-add wave -position end  sim:/contador_180/OUT_COMP
 add wave -position end  sim:/contador_180/TEMPO_EM_SEG
-wave create -driver freeze -pattern clock -initialvalue U -period 25ps -dutycycle 50 -starttime 0ps -endtime 100ps sim:/contador_180/IN_BOTAO
-wave modify -driver freeze -pattern clock -initialvalue U -period 50ps -dutycycle 50 -starttime 0ps -endtime 100ps Edit:/contador_180/IN_BOTAO
-wave modify -driver freeze -pattern constant -value 1 -starttime 100ps -endtime 400ps Edit:/contador_180/IN_BOTAO
-wave modify -driver freeze -pattern constant -value 0 -starttime 400ps -endtime 450ps Edit:/contador_180/IN_BOTAO
-wave modify -driver freeze -pattern constant -value 1 -starttime 450ps -endtime 1000ps Edit:/contador_180/IN_BOTAO
-wave create -driver freeze -pattern clock -initialvalue U -period 20ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/contador_180/CLK_1K
-run
-run
-run
-run
+add wave -position end  sim:/contador_180/OUT_COMP
 run
 run
 run
