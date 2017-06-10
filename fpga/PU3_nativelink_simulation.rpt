@@ -10,8 +10,8 @@ Simulation Tool       :  modelsim-altera
 Simulation Language   :  vhdl
 Version               :  93
 Simulation Mode       :  GUI
-Sim Output File       :  PU3.vho
-Sim SDF File       :  PU3_vhd.sdo
+Sim Output File       :  PU3_fast.vho
+Sim SDF File       :  PU3_vhd_fast.sdo
 Sim dir               :  simulation\modelsim
 
 =======================================================
