@@ -39,7 +39,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1120 120 1328 136)
 	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
-	(text "EQ_MENOR_180[6..0]" (rect 5 0 116 12)(font "Arial" ))
+	(text "EQ_MENOR_180[6..0]" (rect 5 0 115 12)(font "Arial" ))
 	(pt 208 8)
 	(drawing
 		(line (pt 124 12)(pt 149 12))
@@ -55,7 +55,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1120 144 1328 160)
 	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
-	(text "EQ_MENOR_120[0..6]" (rect 5 0 116 12)(font "Arial" ))
+	(text "EQ_MENOR_120[6..0]" (rect 5 0 116 12)(font "Arial" ))
 	(pt 208 8)
 	(drawing
 		(line (pt 124 12)(pt 149 12))
@@ -71,7 +71,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1128 168 1328 184)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
-	(text "EQ_MENOR_90[0..6]" (rect 5 0 111 12)(font "Arial" ))
+	(text "EQ_MENOR_90[6..0]" (rect 5 0 111 12)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 116 12)(pt 141 12))
@@ -87,7 +87,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1128 192 1328 208)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
-	(text "EQ_MENOR_60[0..6]" (rect 5 0 111 12)(font "Arial" ))
+	(text "EQ_MENOR_60[6..0]" (rect 5 0 111 12)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 116 12)(pt 141 12))
@@ -103,7 +103,7 @@ applicable agreement for further details.
 	(input)
 	(rect 1128 216 1328 232)
 	(text "INPUT" (rect 157 0 185 10)(font "Arial" (font_size 6)))
-	(text "EQ_MENOR_30[0..6]" (rect 5 0 111 12)(font "Arial" ))
+	(text "EQ_MENOR_30[6..0]" (rect 5 0 111 12)(font "Arial" ))
 	(pt 200 8)
 	(drawing
 		(line (pt 116 12)(pt 141 12))

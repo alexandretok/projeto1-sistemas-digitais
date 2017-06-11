@@ -71,9 +71,9 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 616 128 830 144)
+	(rect 616 128 808 144)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "TEMPO_EM_SEG[17..0]" (rect 90 0 208 12)(font "Arial" ))
+	(text "TEMPO_SEG[17..0]" (rect 90 0 186 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
