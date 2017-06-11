@@ -1,7 +1,21 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="PU3">
-		<CBX_INST_ENTRY INSTANCE_NAME="|pwm|lpm_compare2:inst2|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_okg.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|pwm|lpm_counter2:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_q1j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_compare4:inst34|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_khg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant5:inst27|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_gh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant7:inst29|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_hh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant9:inst10|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_qf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_compare4:inst31|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_khg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_compare4:inst35|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_khg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant10:inst11|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_rf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant12:inst13|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_tf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_compare4:inst32|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_khg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant3:inst1|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_ih6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant4:inst22|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_jh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant6:inst28|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_9g6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_mux0:inst48|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_b3e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_compare4:inst33|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_khg.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant11:inst12|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_sf6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|seletor_cuva|lpm_constant8:inst9|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_pf6.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
