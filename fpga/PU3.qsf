@@ -100,6 +100,17 @@ set_global_assignment -name QIP_FILE lpm_constant9.qip
 set_global_assignment -name QIP_FILE lpm_constant10.qip
 set_global_assignment -name QIP_FILE lpm_constant11.qip
 set_global_assignment -name QIP_FILE lpm_constant12.qip
+set_global_assignment -name QIP_FILE altfp_convert1.qip
+set_global_assignment -name QIP_FILE lpm_constant13.qip
+set_global_assignment -name QIP_FILE altfp_mult1.qip
+set_global_assignment -name QIP_FILE lpm_constant14.qip
+set_global_assignment -name QIP_FILE altfp_add_sub1.qip
+set_global_assignment -name QIP_FILE altfp_convert2.qip
+set_global_assignment -name QIP_FILE lpm_constant15.qip
+set_global_assignment -name QIP_FILE lpm_constant16.qip
+set_global_assignment -name QIP_FILE lpm_constant17.qip
+set_global_assignment -name QIP_FILE lpm_constant18.qip
+set_global_assignment -name QIP_FILE altfp_add_sub2.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

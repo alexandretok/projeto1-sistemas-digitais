@@ -3,8 +3,8 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\Alexandre\Desktop\digital-systems\fpga\simulation\modelsim
-Eseletor_cuva
-Z1 w1497155573
+Ecurva
+Z1 w1497164026
 Z2 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
 Z3 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
 Z4 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
@@ -16,12 +16,12 @@ Z9 8PU3_fast.vho
 Z10 FPU3_fast.vho
 l0
 L34
-VARkKGK=0o216IWEbTehfk0
-!s100 BeRMQ@26nRLDl;TEOgImK0
+VNl19[NccPfgY;aJnYFPjb2
+!s100 bIJciZ`fhbS>oXYholDna0
 Z11 OV;C;10.1d;51
 31
 !i10b 1
-Z12 !s108 1497155589.259000
+Z12 !s108 1497164041.501000
 Z13 !s90 -reportprogress|300|-93|-work|work|PU3_fast.vho|
 Z14 !s107 PU3_fast.vho|
 Z15 o-93 -work work -O0
@@ -33,11 +33,11 @@ R4
 R5
 R6
 R7
-DEx4 work 12 seletor_cuva 0 22 ARkKGK=0o216IWEbTehfk0
-l94
-L63
-Vd=<[KEELQbC?O0N=eQTV:1
-!s100 9444?z6DGWWe3Z>UB>3F03
+DEx4 work 5 curva 0 22 Nl19[NccPfgY;aJnYFPjb2
+l4146
+L104
+VX^6:3lga^d=M>SC?;JJ9C1
+!s100 59SWIgdQ?j2aWd7XLCK9b2
 R11
 31
 !i10b 1
