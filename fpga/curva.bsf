@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "TEMPO_SEG[8..0]" (rect 0 0 100 14)(font "Arial" (font_size 8)))
-		(text "TEMPO_SEG[8..0]" (rect 21 27 121 41)(font "Arial" (font_size 8)))
+		(text "TEMPO_SEG[9..0]" (rect 0 0 100 14)(font "Arial" (font_size 8)))
+		(text "TEMPO_SEG[9..0]" (rect 21 27 121 41)(font "Arial" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port

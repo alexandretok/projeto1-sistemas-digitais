@@ -42,14 +42,14 @@ USE lpm.all;
 ENTITY lpm_constant5 IS
 	PORT
 	(
-		result		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		result		: OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
 	);
 END lpm_constant5;
 
 
 ARCHITECTURE SYN OF lpm_constant5 IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (9 DOWNTO 0);
 
 
 
@@ -61,19 +61,19 @@ ARCHITECTURE SYN OF lpm_constant5 IS
 		lpm_width		: NATURAL
 	);
 	PORT (
-			result	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			result	: OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	result    <= sub_wire0(7 DOWNTO 0);
+	result    <= sub_wire0(9 DOWNTO 0);
 
 	LPM_CONSTANT_component : LPM_CONSTANT
 	GENERIC MAP (
 		lpm_cvalue => 90,
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "LPM_CONSTANT",
-		lpm_width => 8
+		lpm_width => 10
 	)
 	PORT MAP (
 		result => sub_wire0
@@ -92,18 +92,18 @@ END SYN;
 -- Retrieval info: PRIVATE: Radix NUMERIC "10"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: Value NUMERIC "90"
--- Retrieval info: PRIVATE: nBit NUMERIC "8"
+-- Retrieval info: PRIVATE: nBit NUMERIC "10"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: CONSTANT: LPM_CVALUE NUMERIC "90"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_CONSTANT"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
--- Retrieval info: USED_PORT: result 0 0 8 0 OUTPUT NODEFVAL "result[7..0]"
--- Retrieval info: CONNECT: result 0 0 8 0 @result 0 0 8 0
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "10"
+-- Retrieval info: USED_PORT: result 0 0 10 0 OUTPUT NODEFVAL "result[9..0]"
+-- Retrieval info: CONNECT: result 0 0 10 0 @result 0 0 10 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant5_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

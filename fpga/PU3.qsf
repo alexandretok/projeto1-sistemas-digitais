@@ -64,20 +64,7 @@ set_global_assignment -name QIP_FILE lpm_constant2.qip
 set_global_assignment -name QIP_FILE altfp_mult0.qip
 set_global_assignment -name QIP_FILE altfp_add_sub0.qip
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_AE22 -to LED_SYS_EN
-set_location_assignment PIN_N25 -to IN_SENSOR[9]
-set_location_assignment PIN_N26 -to IN_SENSOR[8]
-set_location_assignment PIN_P25 -to IN_SENSOR[7]
-set_location_assignment PIN_AE14 -to IN_SENSOR[6]
-set_location_assignment PIN_AD13 -to IN_SENSOR[5]
-set_location_assignment PIN_AC13 -to IN_SENSOR[4]
-set_location_assignment PIN_C13 -to IN_SENSOR[3]
-set_location_assignment PIN_B13 -to IN_SENSOR[2]
-set_location_assignment PIN_A13 -to IN_SENSOR[1]
-set_location_assignment PIN_N1 -to IN_SENSOR[0]
 set_location_assignment PIN_G26 -to IN_BOTAO
-set_location_assignment PIN_N2 -to CLK_50M
-set_location_assignment PIN_J22 -to OUT_TEMPO[0]
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -111,6 +98,8 @@ set_global_assignment -name QIP_FILE lpm_constant16.qip
 set_global_assignment -name QIP_FILE lpm_constant17.qip
 set_global_assignment -name QIP_FILE lpm_constant18.qip
 set_global_assignment -name QIP_FILE altfp_add_sub2.qip
+set_location_assignment PIN_AF23 -to LED_SYS_EN
+set_location_assignment PIN_N2 -to CLK_50M
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

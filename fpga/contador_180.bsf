@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 240 112)
+	(rect 16 16 232 112)
 	(text "contador_180" (rect 5 0 84 14)(font "Arial" (font_size 8)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
@@ -38,20 +38,20 @@ applicable agreement for further details.
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
-		(pt 224 32)
+		(pt 216 32)
 		(output)
-		(text "TEMPO_SEG[17..0]" (rect 0 0 107 14)(font "Arial" (font_size 8)))
-		(text "TEMPO_SEG[17..0]" (rect 96 27 203 41)(font "Arial" (font_size 8)))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
+		(text "TEMPO_SEG[9..0]" (rect 0 0 100 14)(font "Arial" (font_size 8)))
+		(text "TEMPO_SEG[9..0]" (rect 95 27 195 41)(font "Arial" (font_size 8)))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
-		(pt 224 48)
+		(pt 216 48)
 		(output)
 		(text "SYS_EN" (rect 0 0 48 14)(font "Arial" (font_size 8)))
-		(text "SYS_EN" (rect 155 43 203 57)(font "Arial" (font_size 8)))
-		(line (pt 224 48)(pt 208 48))
+		(text "SYS_EN" (rect 147 43 195 57)(font "Arial" (font_size 8)))
+		(line (pt 216 48)(pt 200 48))
 	)
 	(drawing
-		(rectangle (rect 16 16 208 80))
+		(rectangle (rect 16 16 200 80))
 	)
 )

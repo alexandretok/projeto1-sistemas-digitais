@@ -16,8 +16,8 @@
 component lpm_compare4
 	PORT
 	(
-		dataa		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		datab		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		dataa		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
 		alb		: OUT STD_LOGIC 
 	);
 end component;

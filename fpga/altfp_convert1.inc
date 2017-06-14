@@ -16,7 +16,7 @@
 FUNCTION altfp_convert1 
 (
 	clock,
-	dataa[8..0]
+	dataa[9..0]
 )
 
 RETURNS (

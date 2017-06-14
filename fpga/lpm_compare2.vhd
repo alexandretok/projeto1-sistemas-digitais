@@ -42,8 +42,8 @@ USE lpm.all;
 ENTITY lpm_compare2 IS
 	PORT
 	(
-		dataa		: IN STD_LOGIC_VECTOR (6 DOWNTO 0);
-		datab		: IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+		dataa		: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
 		aleb		: OUT STD_LOGIC 
 	);
 END lpm_compare2;
@@ -63,8 +63,8 @@ ARCHITECTURE SYN OF lpm_compare2 IS
 	);
 	PORT (
 			aleb	: OUT STD_LOGIC ;
-			dataa	: IN STD_LOGIC_VECTOR (6 DOWNTO 0);
-			datab	: IN STD_LOGIC_VECTOR (6 DOWNTO 0)
+			dataa	: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
+			datab	: IN STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
 	END COMPONENT;
 
@@ -75,7 +75,7 @@ BEGIN
 	GENERIC MAP (
 		lpm_representation => "UNSIGNED",
 		lpm_type => "LPM_COMPARE",
-		lpm_width => 7
+		lpm_width => 9
 	)
 	PORT MAP (
 		dataa => dataa,
@@ -106,17 +106,17 @@ END SYN;
 -- Retrieval info: PRIVATE: aclr NUMERIC "0"
 -- Retrieval info: PRIVATE: clken NUMERIC "0"
 -- Retrieval info: PRIVATE: isPortBConstant NUMERIC "0"
--- Retrieval info: PRIVATE: nBit NUMERIC "7"
+-- Retrieval info: PRIVATE: nBit NUMERIC "9"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: CONSTANT: LPM_REPRESENTATION STRING "UNSIGNED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COMPARE"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "7"
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "9"
 -- Retrieval info: USED_PORT: aleb 0 0 0 0 OUTPUT NODEFVAL "aleb"
--- Retrieval info: USED_PORT: dataa 0 0 7 0 INPUT NODEFVAL "dataa[6..0]"
--- Retrieval info: USED_PORT: datab 0 0 7 0 INPUT NODEFVAL "datab[6..0]"
--- Retrieval info: CONNECT: @dataa 0 0 7 0 dataa 0 0 7 0
--- Retrieval info: CONNECT: @datab 0 0 7 0 datab 0 0 7 0
+-- Retrieval info: USED_PORT: dataa 0 0 9 0 INPUT NODEFVAL "dataa[8..0]"
+-- Retrieval info: USED_PORT: datab 0 0 9 0 INPUT NODEFVAL "datab[8..0]"
+-- Retrieval info: CONNECT: @dataa 0 0 9 0 dataa 0 0 9 0
+-- Retrieval info: CONNECT: @datab 0 0 9 0 datab 0 0 9 0
 -- Retrieval info: CONNECT: aleb 0 0 0 0 @aleb 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare2.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare2.inc FALSE
