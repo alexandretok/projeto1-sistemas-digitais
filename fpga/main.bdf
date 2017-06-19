@@ -401,14 +401,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 360 192)
-	(pt 376 192)
-)
-(connector
-	(pt 376 192)
-	(pt 376 304)
-)
-(connector
 	(pt 376 192)
 	(pt 1072 192)
 )
@@ -474,8 +466,26 @@ applicable agreement for further details.
 	(pt 376 304)
 	(pt 464 304)
 )
+(connector
+	(pt 192 272)
+	(pt 192 192)
+)
+(connector
+	(pt 192 272)
+	(pt 376 272)
+)
+(connector
+	(pt 376 192)
+	(pt 376 272)
+)
+(connector
+	(pt 376 272)
+	(pt 376 304)
+)
 (junction (pt 376 192))
 (junction (pt 656 208))
 (junction (pt 656 88))
 (junction (pt 376 304))
+(junction (pt 192 192))
+(junction (pt 376 272))
 (text "Ao invés de sair TEMPO_SEG[17..0] deve sair TEMPO_SEG[17..8]" (rect 328 32 805 48)(font "Arial" (font_size 10)(bold)))

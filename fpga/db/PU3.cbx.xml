@@ -12,7 +12,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|pwm:inst3|lpm_counter2:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_s1j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|seletor_cuva:inst4|lpm_mux0:inst48|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_d3e.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_add_sub1:inst8|altfp_add_sub1_altfp_add_sub_23j:altfp_add_sub1_altfp_add_sub_23j_component|lpm_add_sub:man_2comp_res_upper0" CBX_FILE_NAME="add_sub_n6l.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_8bk.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|contador_180:inst2|lpm_counter1:inst7|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_85k.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_add_sub1:inst8|altfp_add_sub1_altfp_add_sub_23j:altfp_add_sub1_altfp_add_sub_23j_component|lpm_add_sub:man_2comp_res_upper1" CBX_FILE_NAME="add_sub_n6l.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_convert2:inst12|altfp_convert2_altfp_convert_bqm:altfp_convert2_altfp_convert_bqm_component|lpm_add_sub:add_sub4" CBX_FILE_NAME="add_sub_9ui.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_mult1:inst5|altfp_mult1_altfp_mult_oon:altfp_mult1_altfp_mult_oon_component|lpm_add_sub:exp_adj_adder" CBX_FILE_NAME="add_sub_01h.tdf"/>
