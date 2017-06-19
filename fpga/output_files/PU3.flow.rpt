@@ -1,6 +1,6 @@
 Flow report for PU3
-Wed Jun 14 16:00:44 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+Fri Jun 16 16:29:24 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------+
-; Flow Summary                                                                          ;
-+------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Wed Jun 14 16:00:44 2017            ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
-; Revision Name                      ; PU3                                              ;
-; Top-level Entity Name              ; main                                             ;
-; Family                             ; Cyclone II                                       ;
-; Device                             ; EP2C35F672C6                                     ;
-; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 3,061 / 33,216 ( 9 % )                           ;
-;     Total combinational functions  ; 2,661 / 33,216 ( 8 % )                           ;
-;     Dedicated logic registers      ; 2,197 / 33,216 ( 7 % )                           ;
-; Total registers                    ; 2197                                             ;
-; Total pins                         ; 14 / 475 ( 3 % )                                 ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 568 / 483,840 ( < 1 % )                          ;
-; Embedded Multiplier 9-bit elements ; 14 / 70 ( 20 % )                                 ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                    ;
-+------------------------------------+--------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Fri Jun 16 16:29:24 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; PU3                                        ;
+; Top-level Entity Name              ; main                                       ;
+; Family                             ; Cyclone II                                 ;
+; Device                             ; EP2C35F672C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 3,021 / 33,216 ( 9 % )                     ;
+;     Total combinational functions  ; 2,663 / 33,216 ( 8 % )                     ;
+;     Dedicated logic registers      ; 2,197 / 33,216 ( 7 % )                     ;
+; Total registers                    ; 2197                                       ;
+; Total pins                         ; 15 / 475 ( 3 % )                           ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 568 / 483,840 ( < 1 % )                    ;
+; Embedded Multiplier 9-bit elements ; 14 / 70 ( 20 % )                           ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
++------------------------------------+--------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/14/2017 15:59:43 ;
+; Start date & time ; 06/16/2017 16:28:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PU3                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 8796759546496.149746678304084         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 48549633040080.149764129102252        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; LPM_COUNTER                           ; --            ; --          ; --             ;
@@ -257,12 +257,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 595 MB              ; 00:00:17                           ;
-; Fitter                    ; 00:00:31     ; 1.0                     ; 709 MB              ; 00:00:31                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 405 MB              ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 438 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 428 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:55     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 578 MB              ; 00:00:19                           ;
+; Fitter                    ; 00:00:38     ; 1.0                     ; 702 MB              ; 00:00:38                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 424 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 433 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 418 MB              ; 00:00:03                           ;
+; Total                     ; 00:01:05     ; --                      ; --                  ; 00:01:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -271,11 +271,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Alexandre-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; Alexandre-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; Alexandre-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Alexandre-PC     ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; Alexandre-PC     ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; LHR06            ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; LHR06            ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; LHR06            ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; LHR06            ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; LHR06            ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

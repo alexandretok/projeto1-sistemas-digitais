@@ -56,7 +56,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|lpm_constant16:inst15|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_1j6.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|divisor_clock:inst1|lpm_compare0:inst|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_a9j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|seletor_cuva:inst4|lpm_compare4:inst35|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_tig.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_ccj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|contador_180:inst2|lpm_compare1:inst8|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_79j.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_add_sub1:inst8|altfp_add_sub1_altfp_add_sub_23j:altfp_add_sub1_altfp_add_sub_23j_component|altshift_taps:data_exp_dffe1_rtl_0" CBX_FILE_NAME="shift_taps_02m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_add_sub1:inst8|altfp_add_sub1_altfp_add_sub_23j:altfp_add_sub1_altfp_add_sub_23j_component|lpm_add_sub:add_sub5" CBX_FILE_NAME="add_sub_2lj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|main|curva:inst5|altfp_add_sub1:inst8|altfp_add_sub1_altfp_add_sub_23j:altfp_add_sub1_altfp_add_sub_23j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" CBX_FILE_NAME="add_sub_hvg.tdf"/>

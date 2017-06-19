@@ -446,12 +446,12 @@ applicable agreement for further details.
 	(port
 		(pt 128 56)
 		(output)
-		(text "ageb" (rect 0 0 28 14)(font "Arial" (font_size 8)))
-		(text "ageb" (rect 85 49 113 63)(font "Arial" (font_size 8)))
+		(text "agb" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "agb" (rect 91 49 112 63)(font "Arial" (font_size 8)))
 		(line (pt 128 56)(pt 112 56))
 	)
 	(drawing
-		(text "datab[]=100000" (rect 20 57 108 71)(font "Arial" (font_size 8)))
+		(text "datab[]=30000" (rect 20 57 101 71)(font "Arial" (font_size 8)))
 		(text "unsigned compare" (rect 36 26 125 38)(font "Arial" ))
 		(line (pt 16 16)(pt 16 80))
 		(line (pt 16 16)(pt 112 16))
@@ -608,18 +608,6 @@ applicable agreement for further details.
 	(pt 728 312)
 )
 (connector
-	(pt 752 208)
-	(pt 352 208)
-)
-(connector
-	(pt 352 208)
-	(pt 352 256)
-)
-(connector
-	(pt 352 256)
-	(pt 376 256)
-)
-(connector
 	(pt 336 320)
 	(pt 376 320)
 )
@@ -632,20 +620,8 @@ applicable agreement for further details.
 	(pt 376 288)
 )
 (connector
-	(pt 752 208)
-	(pt 752 312)
-)
-(connector
-	(pt 752 312)
-	(pt 752 392)
-)
-(connector
 	(pt -32 392)
 	(pt 232 392)
-)
-(connector
-	(pt 336 168)
-	(pt 616 168)
 )
 (connector
 	(pt 232 272)
@@ -677,6 +653,30 @@ applicable agreement for further details.
 )
 (connector
 	(pt 232 392)
+	(pt 752 392)
+)
+(connector
+	(pt 376 256)
+	(pt 360 256)
+)
+(connector
+	(pt 336 168)
+	(pt 616 168)
+)
+(connector
+	(pt 360 256)
+	(pt 360 208)
+)
+(connector
+	(pt 360 208)
+	(pt 752 208)
+)
+(connector
+	(pt 752 208)
+	(pt 752 312)
+)
+(connector
+	(pt 752 312)
 	(pt 752 392)
 )
 (junction (pt 336 168))

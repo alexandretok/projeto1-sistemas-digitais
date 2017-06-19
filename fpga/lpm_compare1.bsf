@@ -33,12 +33,12 @@ applicable agreement for further details.
 	(port
 		(pt 128 56)
 		(output)
-		(text "ageb" (rect 0 0 28 14)(font "Arial" (font_size 8)))
-		(text "ageb" (rect 85 49 107 62)(font "Arial" (font_size 8)))
+		(text "agb" (rect 0 0 21 14)(font "Arial" (font_size 8)))
+		(text "agb" (rect 91 49 107 62)(font "Arial" (font_size 8)))
 		(line (pt 128 56)(pt 112 56))
 	)
 	(drawing
-		(text "datab[]=100000" (rect 20 57 113 127)(font "Arial" (font_size 8)))
+		(text "datab[]=30000" (rect 20 57 107 127)(font "Arial" (font_size 8)))
 		(text "unsigned compare" (rect 36 26 146 63)(font "Arial" ))
 		(line (pt 16 16)(pt 16 80))
 		(line (pt 16 16)(pt 112 16))
